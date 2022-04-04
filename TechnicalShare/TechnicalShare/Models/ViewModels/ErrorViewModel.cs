@@ -1,6 +1,6 @@
 using System;
 
-namespace TechnicalShare.Models
+namespace TechnicalShare.Models.ViewModels
 {
     public class ErrorViewModel
     {

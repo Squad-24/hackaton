@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TechnicalShare.Models;
+using TechnicalShare.Models.ViewModels;
 
 namespace TechnicalShare.Controllers
 {
