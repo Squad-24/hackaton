@@ -26,11 +26,7 @@ namespace TechnicalShare.Data
             Expertise expertise1 = new Expertise(1, "front-end");
             Mentor mentor1 = new Mentor(1, "Alex Brown", "alexbrown@gmail.com", "123456", expertise1, Models.Enums.Level.MidLevel);
             Mentee mentee1 = new Mentee(2, "Maria Green", "mariagreen@hotmail.com", "123456", expertise1);
-
-            _context.Add(expertise1);
-            _context.Add(mentor1);
-            _context.Add(mentee1);
-
+                       
             _context.SaveChanges();
         }
 
