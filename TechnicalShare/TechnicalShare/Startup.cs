@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TechnicalShare.Data;
+using TechnicalShare.Services;
 
 namespace TechnicalShare
 {
@@ -41,6 +42,8 @@ namespace TechnicalShare
             builder.MigrationsAssembly("TechnicalShare")));
 
             services.AddScoped<SeedingService>();
+
+            services.AddScoped<MentorService>();
 
         }
 

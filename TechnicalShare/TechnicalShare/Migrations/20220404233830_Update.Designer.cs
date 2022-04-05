@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechnicalShare.Data;
 
 namespace TechnicalShare.Migrations
 {
     [DbContext(typeof(TechnicalShareContext))]
-    partial class TechnicalShareContextModelSnapshot : ModelSnapshot
+    [Migration("20220404233830_Update")]
+    partial class Update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,7 +88,7 @@ namespace TechnicalShare.Migrations
                 {
                     b.HasBaseType("TechnicalShare.Models.User");
 
-                    b.Property<int>("ExpertiseId");
+                    b.Property<int?>("ExpertiseId");
 
                     b.Property<string>("ExpertiseName");
 
@@ -119,8 +121,7 @@ namespace TechnicalShare.Migrations
                 {
                     b.HasOne("TechnicalShare.Models.Expertise", "Expertise")
                         .WithMany("Mentors")
-                        .HasForeignKey("ExpertiseId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ExpertiseId");
                 });
 #pragma warning restore 612, 618
         }

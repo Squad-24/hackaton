@@ -11,20 +11,20 @@ namespace TechnicalShare.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public Expertise Expertise { get; set; }
-
+        
         public User()
         {
                 
         }
 
-        public User(int id, string name, string email, string password, Expertise expertise)
+        public User(int id, string name, string email, string password)
         {
             Id = id;
             Name = name;
             Email = email;
-            Password = password;
-            Expertise = expertise;
+            Password = password;        
         }
+
+        
     }
 }

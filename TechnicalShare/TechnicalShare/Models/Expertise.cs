@@ -21,6 +21,11 @@ namespace TechnicalShare.Models
             Name = name;
         }
 
+        public Expertise(string name)
+        {
+            Name = name;
+        }
+
         public void AddMentor(Mentor mentor)
         {
             Mentors.Add(mentor);

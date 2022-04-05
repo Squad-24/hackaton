@@ -13,13 +13,12 @@ namespace TechnicalShare.Models
 
         }
 
-        public Mentee(int id, string name, string email, string password, Expertise expertise)
+        public Mentee(int id, string name, string email, string password) : base(id, name, email, password)
         {
             Id = id;
             Name = name;
             Email = email;
             Password = password;
-            Expertise = expertise;
         }
 
         public void AddMentor(MentorMentee mentor)
