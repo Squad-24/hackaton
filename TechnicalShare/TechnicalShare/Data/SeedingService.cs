@@ -22,13 +22,11 @@ namespace TechnicalShare.Data
             {
                 Expertise expertise = new Expertise("front-end");
                 Expertise expertise2 = new Expertise("back-end");
-                Mentor mentor1 = new Mentor(4, "Alex Brown", "alexbrown@hotmail.com", "1234567", Models.Enums.Level.MidLevel, expertise);
-                Mentor mentor2 = new Mentor(6, "Maria Green", "mariagreen@hotmail.com", "1234567", Models.Enums.Level.Junior, expertise2);
+                Mentor mentor1 = new Mentor(1, "Billy", "billy@hotmail.com", "1234567", "desenvolvedor front-end", Models.Enums.Level.MidLevel, expertise);
+                Mentor mentor2 = new Mentor(2, "Anna", "anna@hotmail.com", "1234567", "desenvolvedora back-end", Models.Enums.Level.Junior, expertise2);
 
                 _context.Expertise.AddRange(expertise, expertise2);
                 _context.Mentor.AddRange(mentor1, mentor2);
-
-
                 _context.SaveChanges();
             }
 

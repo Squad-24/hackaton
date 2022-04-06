@@ -12,6 +12,7 @@ namespace TechnicalShare.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Position { get; set; }
         public Level Level { get; set; }
 
         public Expertise Expertise { get; set; }
@@ -25,12 +26,13 @@ namespace TechnicalShare.Models
 
         }
 
-        public Mentor(int id, string name, string email, string password, Level level, Expertise expertise) 
+        public Mentor(int id, string name, string email, string password, string position, Level level, Expertise expertise) 
         {
             Id = id;
             Name = name;
             Email = email;
             Password = password;
+            Position = position;
             Level = level;
             Expertise = expertise;
         }

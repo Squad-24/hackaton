@@ -22,5 +22,9 @@ namespace TechnicalShare.Services
             return _context.Mentor.Include(obj => obj.Expertise).ToList();
         }
 
+        public Mentor FindbyId(int id)
+        {
+            return _context.Mentor.Include(obj => obj.Expertise).First(obj => obj.Id == id);
+        }
     }
 }

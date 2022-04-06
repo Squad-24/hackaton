@@ -23,5 +23,23 @@ namespace TechnicalShare.Controllers
             return View(list);
         }
 
+        public IActionResult Profile(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _mentorService.FindbyId(id.Value);
+
+            if(obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+
+
+        }
     }
 }

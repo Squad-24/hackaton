@@ -1,0 +1,33 @@
+﻿@model TechnicalShare.Models.Mentor
+@{
+    ViewData["Title"] = "perfil de " + Model.Name;
+}
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            nome
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            posição
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+        <dt>
+            mentorias sobre
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Expertise.Name)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Schedule" asp-route-id="@Model.Id">agendar</a>
+</div>
