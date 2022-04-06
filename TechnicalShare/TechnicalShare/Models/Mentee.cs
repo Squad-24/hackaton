@@ -5,20 +5,23 @@ using System.Threading.Tasks;
 
 namespace TechnicalShare.Models
 {
-    public class Mentee : User
+    public class Mentee 
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
         public ICollection<MentorMentee> Mentors { get; set; } = new List<MentorMentee>();
         public Mentee()
         {
 
         }
 
-        public Mentee(int id, string name, string email, string password) : base(id, name, email, password)
+        public Mentee(int id, string name, string email)
         {
             Id = id;
             Name = name;
             Email = email;
-            Password = password;
+           
         }
 
         public void AddMentor(MentorMentee mentor)

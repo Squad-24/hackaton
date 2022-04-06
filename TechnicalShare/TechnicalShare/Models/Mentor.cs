@@ -6,8 +6,12 @@ using TechnicalShare.Models.Enums;
 
 namespace TechnicalShare.Models
 {
-    public class Mentor : User
+    public class Mentor 
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public Level Level { get; set; }
 
         public Expertise Expertise { get; set; }
@@ -21,12 +25,12 @@ namespace TechnicalShare.Models
 
         }
 
-        public Mentor(int id, string name, string email, string password, Level level, Expertise expertise) : base(id, name, email, password)
+        public Mentor(int id, string name, string email, string password, Level level, Expertise expertise) 
         {
             Id = id;
             Name = name;
             Email = email;
-            Password = password;          
+            Password = password;
             Level = level;
             Expertise = expertise;
         }

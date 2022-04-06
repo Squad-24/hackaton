@@ -15,8 +15,7 @@ namespace TechnicalShare.Data
 
         public DbSet<Expertise> Expertise { get; set; }
         public DbSet<Mentee> Mentee { get; set; }
-        public DbSet<Mentor> Mentor { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<Mentor> Mentor { get; set; }        
         public DbSet<MentorMentee> MentorMentee { get; set; }
     }
 }

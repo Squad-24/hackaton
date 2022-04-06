@@ -9,8 +9,8 @@ using TechnicalShare.Data;
 namespace TechnicalShare.Migrations
 {
     [DbContext(typeof(TechnicalShareContext))]
-    [Migration("20220405054220_MentorForeignKey")]
-    partial class MentorForeignKey
+    [Migration("20220406005052_dropuser")]
+    partial class dropuser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,44 @@ namespace TechnicalShare.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Expertise");
+                });
+
+            modelBuilder.Entity("TechnicalShare.Models.Mentee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Mentee");
+                });
+
+            modelBuilder.Entity("TechnicalShare.Models.Mentor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Email");
+
+                    b.Property<int>("ExpertiseId");
+
+                    b.Property<string>("ExpertiseName");
+
+                    b.Property<int>("Level");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Password");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExpertiseId");
+
+                    b.ToTable("Mentor");
                 });
 
             modelBuilder.Entity("TechnicalShare.Models.MentorMentee", b =>
@@ -53,52 +91,12 @@ namespace TechnicalShare.Migrations
                     b.ToTable("MentorMentee");
                 });
 
-            modelBuilder.Entity("TechnicalShare.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Password");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("User");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
-                });
-
-            modelBuilder.Entity("TechnicalShare.Models.Mentee", b =>
-                {
-                    b.HasBaseType("TechnicalShare.Models.User");
-
-
-                    b.ToTable("Mentee");
-
-                    b.HasDiscriminator().HasValue("Mentee");
-                });
-
             modelBuilder.Entity("TechnicalShare.Models.Mentor", b =>
                 {
-                    b.HasBaseType("TechnicalShare.Models.User");
-
-                    b.Property<int>("ExpertiseId");
-
-                    b.Property<string>("ExpertiseName");
-
-                    b.Property<int>("Level");
-
-                    b.HasIndex("ExpertiseId");
-
-                    b.ToTable("Mentor");
-
-                    b.HasDiscriminator().HasValue("Mentor");
+                    b.HasOne("TechnicalShare.Models.Expertise", "Expertise")
+                        .WithMany("Mentors")
+                        .HasForeignKey("ExpertiseId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("TechnicalShare.Models.MentorMentee", b =>
@@ -115,14 +113,6 @@ namespace TechnicalShare.Migrations
                     b.HasOne("TechnicalShare.Models.Mentor", "Mentor")
                         .WithMany("Mentees")
                         .HasForeignKey("MentorId1");
-                });
-
-            modelBuilder.Entity("TechnicalShare.Models.Mentor", b =>
-                {
-                    b.HasOne("TechnicalShare.Models.Expertise", "Expertise")
-                        .WithMany("Mentors")
-                        .HasForeignKey("ExpertiseId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
