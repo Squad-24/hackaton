@@ -25,13 +25,13 @@ namespace TechnicalShare.Controllers
 
         public IActionResult Frontend()
         {
-            var list = _mentorService.GetFrontEnd();
+            var list = _mentorService.FilterById(1);
             return View(list);
         }
 
         public IActionResult BackEnd()
         {
-            var list = _mentorService.GetBackEnd();
+            var list = _mentorService.FilterById(2);
             return View(list);
         }
 
