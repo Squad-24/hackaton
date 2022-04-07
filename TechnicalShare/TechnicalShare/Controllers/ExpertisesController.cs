@@ -11,14 +11,17 @@ namespace TechnicalShare.Controllers
     public class ExpertisesController : Controller
     {
         private readonly TechnicalShareContext _context;
+        private readonly MentorService _mentorService;
 
-        public ExpertisesController(TechnicalShareContext context)
+        public ExpertisesController(TechnicalShareContext context, MentorService mentorService)
         {
             _context = context;
+            _mentorService = mentorService;
         }
         public IActionResult Index()
         {
-            return View();
+            var list = _mentorService.FindAll();
+            return View(list);
         }
         
     }

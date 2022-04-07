@@ -1,3 +1,23 @@
-﻿@{ 
+﻿@model IEnumerable<TechnicalShare.Models.Mentor>
+@{
     ViewData["Title"] = "áreas";
 }
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+         <th>             
+         </th>
+         </tr>        
+     </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Expertise.Name)
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
