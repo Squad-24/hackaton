@@ -27,32 +27,18 @@ namespace TechnicalShare.Services
             return _context.Mentor.Include(obj => obj.Expertise).First(obj => obj.Id == id);
         }
 
-        public List<Mentor> GetFrontEnd()
+        public List<Mentor> FilterById(int Id)
         {
             List<Mentor> mentores = _context.Mentor.Include(obj => obj.Expertise).ToList();
-            var front = from mentor in mentores
-                        where mentor.ExpertiseId == 1
+            var list = from mentor in mentores
+                        where mentor.ExpertiseId == Id
                         select mentor;
 
-            List<Mentor> FrontEnd = new List<Mentor>();
-            foreach (Mentor mentor in front)
-                FrontEnd.Add(mentor);
+            List<Mentor> FilteredList = new List<Mentor>();
+            foreach (Mentor mentor in list)
+                FilteredList.Add(mentor);
 
-            return FrontEnd;
-        }
-
-        public List<Mentor> GetBackEnd()
-        {
-            List<Mentor> mentores = _context.Mentor.Include(obj => obj.Expertise).ToList();
-            var back = from mentor in mentores
-                        where mentor.ExpertiseId == 2
-                        select mentor;
-
-            List<Mentor> BackEnd = new List<Mentor>();
-            foreach (Mentor mentor in back)
-                BackEnd.Add(mentor);
-
-            return BackEnd;
+            return FilteredList;
         }
 
         public Mentor AddMentor(Mentor mentor)
