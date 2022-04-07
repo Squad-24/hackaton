@@ -22,6 +22,15 @@ namespace TechnicalShare.Controllers
             var list = _mentorService.FindAll();
             return View(list);
         }
+        public IActionResult Agendar(int id)
+        {
+            CalendarMentor calendarMentor = new CalendarMentor();
+
+            var mentor = _mentorService.FindbyId(id);
+            calendarMentor.Mentor = mentor;
+            calendarMentor.MentorId = id;
+            return View(calendarMentor);
+        }
 
         public IActionResult Profile(int? id)
         {

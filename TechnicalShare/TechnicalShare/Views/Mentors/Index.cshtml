@@ -1,13 +1,17 @@
 ﻿@model IEnumerable<TechnicalShare.Models.Mentor>
 
 @{
-    ViewData["Title"] = "mentores";
+    ViewData["Title"] = "Mentores";
 }
 <h2>
     @ViewData["Title"]
 </h2>
 
-<table class="table table-striped table-hover">
+<p>Filtros:</p>
+<a asp-controller="Mentor" asp-action="Frontend">Front-End</a>
+<a asp-controller="Mentor" asp-action="Backend">Back-End</a>
+
+<table class="table table-striped table-hover" id="table-mentor">
     <thead>
         <tr>
             <th>
