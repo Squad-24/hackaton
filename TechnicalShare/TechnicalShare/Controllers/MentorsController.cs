@@ -39,7 +39,6 @@ namespace TechnicalShare.Controllers
 
             return View(obj);
 
-
         }
     }
 }

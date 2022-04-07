@@ -24,6 +24,13 @@ namespace TechnicalShare.Models
            
         }
 
+        public Mentee(string name, string email)
+        {           
+            Name = name;
+            Email = email;
+
+        }
+
         public void AddMentor(MentorMentee mentor)
         {
             Mentors.Add(mentor);

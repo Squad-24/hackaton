@@ -37,6 +37,15 @@ namespace TechnicalShare.Models
             Expertise = expertise;
         }
 
+        public Mentor(string name, string email, string password, string position, Level level, Expertise expertise)
+        {            
+            Name = name;
+            Email = email;
+            Password = password;
+            Position = position;
+            Level = level;
+            Expertise = expertise;
+        }
         public void AddMentee(MentorMentee mentee)
         {
             Mentees.Add(mentee);

@@ -7,8 +7,9 @@ namespace TechnicalShare.Models.Enums
 {
     public enum Level
     {
-        Junior,
-        MidLevel,
-        Senior
+        junior,
+        pleno,
+        senior,
+        master
     }
 }
