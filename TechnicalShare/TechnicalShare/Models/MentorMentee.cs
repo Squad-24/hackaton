@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TechnicalShare.Models
 {
-    public class MentorMentee
+    public class MentorMentee : IMentorMentee
     {
         [Key]
         public int MentorId { get; set; }
