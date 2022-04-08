@@ -6,7 +6,7 @@ using TechnicalShare.Models.Enums;
 
 namespace TechnicalShare.Models
 {
-    public class Mentor 
+    public class Mentor : IMentor
     {
         public int Id { get; set; }
         public string Name { get; set; }
