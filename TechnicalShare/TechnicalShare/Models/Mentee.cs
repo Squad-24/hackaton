@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TechnicalShare.Models
 {
-    public class Mentee 
+    public class Mentee : IMentee
     {
         public int Id { get; set; }
         public string Name { get; set; }
