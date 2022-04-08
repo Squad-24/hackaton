@@ -11,9 +11,9 @@ namespace TechnicalShare.Controllers
 {
     public class MentorsController : Controller        
     {
-        private readonly MentorService _mentorService;
+        private readonly IMentorService _mentorService;
 
-        public MentorsController(MentorService mentorService)
+        public MentorsController(IMentorService mentorService)
         {
             _mentorService = mentorService;
         }
