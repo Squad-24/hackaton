@@ -46,7 +46,7 @@ namespace TechnicalShare
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ISeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
