@@ -6,7 +6,7 @@ using TechnicalShare.Models;
 
 namespace TechnicalShare.Data
 {
-    public class SeedingService
+    public class SeedingService : ISeedingService
     {
         private readonly TechnicalShareContext _context;
 
