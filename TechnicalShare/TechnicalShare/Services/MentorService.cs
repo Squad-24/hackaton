@@ -8,7 +8,7 @@ using TechnicalShare.Models;
 
 namespace TechnicalShare.Services
 {
-    public class MentorService
+    public class MentorService : IMentorService
     {
         private readonly TechnicalShareContext _context;
 
