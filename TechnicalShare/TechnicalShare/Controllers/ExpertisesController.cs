@@ -12,8 +12,8 @@ namespace TechnicalShare.Controllers
 {
     public class ExpertisesController : Controller
     {        
-        private readonly ExpertiseService _expertiseService;       
-        public ExpertisesController(ExpertiseService expertiseService)
+        private readonly IExpertiseService _expertiseService;       
+        public ExpertisesController(IExpertiseService expertiseService)
         {
             
             _expertiseService = expertiseService;
