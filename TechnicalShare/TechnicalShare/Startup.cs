@@ -39,6 +39,7 @@ namespace TechnicalShare
 
             services.AddScoped<SeedingService>();
             services.AddScoped<MentorService>();
+            services.AddScoped<ExpertiseService>();
 
         }
 

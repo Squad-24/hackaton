@@ -11,14 +11,13 @@ using TechnicalShare.Services;
 namespace TechnicalShare.Controllers
 {
     public class ExpertisesController : Controller
-    {
-        private readonly TechnicalShareContext _context;
-        private readonly ExpertiseService _expertiseService;
-
-        public ExpertisesController(TechnicalShareContext context, ExpertiseService expertiseService)
+    {        
+        private readonly ExpertiseService _expertiseService;       
+        public ExpertisesController(ExpertiseService expertiseService)
         {
-            _context = context;
+            
             _expertiseService = expertiseService;
+           
         }
         public IActionResult Index()
         {
@@ -26,7 +25,47 @@ namespace TechnicalShare.Controllers
             return View(list);
         }
 
-      
+        public IActionResult BackEnd(int id)
+        {
+            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            return View(list);
+        }              
+
+        public IActionResult DevOps(int id)
+        {
+            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            return View(list);
+        }
+
+        public IActionResult FrontEnd(int id)
+        {
+            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            return View(list);
+        }
+
+        public IActionResult Mobile(int id)
+        {
+            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            return View(list);
+        }
+
+        public IActionResult ProductManagement(int id)
+        {
+            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            return View(list);
+        }
+
+        public IActionResult UIDesign(int id)
+        {
+            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            return View(list);
+        }
+
+        public IActionResult UXDesign(int id)
+        {
+            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            return View(list);
+        }
 
     }
 }
