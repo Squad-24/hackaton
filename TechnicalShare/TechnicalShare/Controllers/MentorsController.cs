@@ -22,6 +22,49 @@ namespace TechnicalShare.Controllers
             var list = _mentorService.FindAll();
             return View(list);
         }
+
+        
+        public IActionResult Frontend()
+        {
+            var list = _mentorService.FilterById(1);
+            return View(list);
+        }
+
+        public IActionResult BackEnd()
+        {
+            var list = _mentorService.FilterById(2);
+            return View(list);
+        }
+
+        public IActionResult Profile(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _mentorService.FindbyId(id.Value);
+
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Mentor mentor)
+        {
+            _mentorService.AddMentor(mentor);
+            return RedirectToAction("Index");
+        }
+
+
         public IActionResult Agendar(int id)
         {
             CalendarMentor calendarMentor = new CalendarMentor();
@@ -32,22 +75,7 @@ namespace TechnicalShare.Controllers
             return View(calendarMentor);
         }
 
-        public IActionResult Profile(int? id)
-        {
-            if(id == null)
-            {
-                return NotFound();
-            }
+       
 
-            var obj = _mentorService.FindbyId(id.Value);
-
-            if(obj == null)
-            {
-                return NotFound();
-            }
-
-            return View(obj);
-
-        }
     }
 }
