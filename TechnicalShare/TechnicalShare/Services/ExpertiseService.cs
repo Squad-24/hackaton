@@ -28,6 +28,18 @@ namespace TechnicalShare.Services
             return _context.Expertise.First(obj => obj.Id == id);
         }
 
-        
+        public List<Mentor> FilterById(int Id)
+        {
+            List<Mentor> mentores = _context.Mentor.Include(obj => obj.Expertise).ToList();
+            var list = from mentor in mentores
+                       where mentor.ExpertiseId == Id
+                       select mentor;
+
+            List<Mentor> FilteredList = new List<Mentor>();
+            foreach (Mentor mentor in list)
+                FilteredList.Add(mentor);
+
+            return FilteredList;
+        }
     }
 }

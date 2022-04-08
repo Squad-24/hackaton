@@ -25,45 +25,45 @@ namespace TechnicalShare.Controllers
             return View(list);
         }
 
-        public IActionResult BackEnd(int id)
+        public IActionResult BackEnd()
         {
-            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            var list = _expertiseService.FilterById(1);                       
             return View(list);
         }              
 
-        public IActionResult DevOps(int id)
+        public IActionResult DevOps()
         {
-            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            var list = _expertiseService.FilterById(2);
             return View(list);
         }
 
-        public IActionResult FrontEnd(int id)
+        public IActionResult FrontEnd()
         {
-            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            var list = _expertiseService.FilterById(3);
             return View(list);
         }
 
-        public IActionResult Mobile(int id)
+        public IActionResult Mobile()
         {
-            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            var list = _expertiseService.FilterById(4);
             return View(list);
         }
 
-        public IActionResult ProductManagement(int id)
+        public IActionResult ProductManagement()
         {
-            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            var list = _expertiseService.FilterById(5);
             return View(list);
         }
 
-        public IActionResult UIDesign(int id)
+        public IActionResult UIDesign()
         {
-            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            var list = _expertiseService.FilterById(6);
             return View(list);
         }
 
-        public IActionResult UXDesign(int id)
+        public IActionResult UXDesign()
         {
-            var list = _expertiseService.FindAll().Where(obj => obj.Id == id);
+            var list = _expertiseService.FilterById(7);
             return View(list);
         }
 
