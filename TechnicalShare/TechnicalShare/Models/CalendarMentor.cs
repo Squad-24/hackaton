@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TechnicalShare.Models
 {
-    public class CalendarMentor
+    public class CalendarMentor : ICalendarMentor
     {
         public DateTime dateTimeMentor { get; set; }
         
