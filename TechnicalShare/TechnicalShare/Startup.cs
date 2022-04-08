@@ -37,9 +37,9 @@ namespace TechnicalShare
             options.UseMySql(Configuration.GetConnectionString("TechnicalShareContext"), builder =>
             builder.MigrationsAssembly("TechnicalShare")));
 
-            services.AddScoped<SeedingService>();
-            services.AddScoped<MentorService>();
-            services.AddScoped<ExpertiseService>();
+            services.AddScoped<ISeedingService, SeedingService>();
+            services.AddScoped<IMentorService, MentorService>();
+            services.AddScoped<IExpertiseService, ExpertiseService>();
 
         }
 
