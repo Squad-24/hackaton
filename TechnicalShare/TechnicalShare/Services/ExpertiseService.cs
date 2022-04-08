@@ -8,7 +8,7 @@ using TechnicalShare.Models;
 
 namespace TechnicalShare.Services
 {
-    public class ExpertiseService
+    public class ExpertiseService : IExpertiseService
     {
         private readonly TechnicalShareContext _context;
 
