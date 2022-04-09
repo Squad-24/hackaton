@@ -6,7 +6,6 @@ namespace TechnicalShare.Models
     {
         int Id { get; set; }
         string Name { get; set; }
-        ICollection<Mentor> Mentors { get; set; }
-        void AddMentor(Mentor mentor);
+        
     }
 }

@@ -30,7 +30,7 @@ namespace TechnicalShare.Data
             Expertise expertise5 = new Expertise(5, "product management");
             Expertise expertise6 = new Expertise(6, "ui design");
             Expertise expertise7 = new Expertise(7, "ux design");            
-            Mentor mentor2 = new Mentor("maria", "maria@hotmail.com", "1234567", "desenvolvedora back-end", Models.Enums.Level.senior, expertise);
+            Mentor mentor2 = new Mentor("maria", "maria@hotmail.com", "1234567", "desenvolvedora full stack", Models.Enums.Level.senior, expertise);
             Mentor mentor6 = new Mentor("mariana", "mariana@hotmail.com", "1234567", "devops", Models.Enums.Level.senior, expertise2);
             Mentor mentor1 = new Mentor("joão", "joão@hotmail.com", "1234567", "desenvolvedor front-end", Models.Enums.Level.pleno, expertise3);
             Mentor mentor3 = new Mentor("paula", "paula@hotmail.com", "1234567", "desenvolvedora mobile", Models.Enums.Level.junior, expertise4);

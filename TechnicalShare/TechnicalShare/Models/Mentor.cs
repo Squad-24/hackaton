@@ -17,7 +17,7 @@ namespace TechnicalShare.Models
 
         public Expertise Expertise { get; set; }
 
-        public int ExpertiseId { get; set; }
+        public int ExpertiseId { get; set; }       
         public string ExpertiseName { get; set; }
        
         public ICollection<MentorMentee> Mentees { get; set; } = new List<MentorMentee>();
@@ -46,6 +46,7 @@ namespace TechnicalShare.Models
             Level = level;
             Expertise = expertise;
         }
+                
         public void AddMentee(MentorMentee mentee)
         {
             Mentees.Add(mentee);

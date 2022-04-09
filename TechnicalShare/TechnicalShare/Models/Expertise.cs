@@ -9,7 +9,7 @@ namespace TechnicalShare.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Mentor> Mentors { get; set; } = new List<Mentor>();
+        
         public Expertise()
         {
                 
@@ -26,9 +26,6 @@ namespace TechnicalShare.Models
             Name = name;
         }
 
-        public void AddMentor(Mentor mentor)
-        {
-            Mentors.Add(mentor);
-        }
+        
     }
 }

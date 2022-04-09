@@ -8,7 +8,7 @@
 <form method="POST" asp-action="Agendar">
 
     <p>
-        <label style="margin-top:50px" asp-for="Mentor.Name">Agendamento com o mentor: @Html.DisplayFor(model => model.Mentor.Name)</label>
+        <label style="margin-top:50px" asp-for="Mentor.Name">Agendamento com o(a) mentor(a): @Html.DisplayFor(model => model.Mentor.Name)</label>
     </p>
 
     <p>
@@ -18,6 +18,6 @@
                min="2022-07-04T00:30" asp-for="dateTimeMentor" />
     </p>
     <p>
-        <input type="submit" value="Agendar">
+        <input type="submit" class="btn btn-default" value="Agendar">
     </p>
 </form>
