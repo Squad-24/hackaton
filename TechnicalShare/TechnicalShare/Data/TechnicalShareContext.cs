@@ -17,5 +17,6 @@ namespace TechnicalShare.Data
         public DbSet<Mentee> Mentee { get; set; }
         public DbSet<Mentor> Mentor { get; set; }        
         public DbSet<MentorMentee> MentorMentee { get; set; }
+        public DbSet<CalendarMentor> CalendarMentor { get; set; }
     }
 }
