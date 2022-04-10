@@ -1,0 +1,52 @@
+﻿@using TechnicalShare.Models.Enums
+@model TechnicalShare.Models.Mentor
+@{
+    ViewData["Title"] = "Cadastrar-se";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastro de novo mentor</h1>
+</div>
+
+<form asp-controller="Mentors" asp-action="Add" method="post">
+
+    <div>
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" asp-for="Name" class="form-control" placholder="Digite seu nome" />
+        </div>
+
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="text" asp-for="Email" class="form-control" placholder="Digite seu e-mail" />
+        </div>
+            
+        <div class="form-group">
+            <label>Senha</label>
+            <input type="text" asp-for="Password" class="form-control" placholder="Digite sua senha" />
+        </div>
+            
+        <div class="form-group">
+            <label>Área</label>
+            <input type="text" asp-for="Position" class="form-control" placholder="Digite seu área de atuação" />
+        </div>
+            
+        <div class="form-group">
+            <label>Cargo</label>
+            <select asp-for="Level" class="form-control">
+                <option value="@Level.junior">Junior</option>
+                <option value="@Level.pleno">Pleno</option>
+                <option value="@Level.senior">Senior</option>
+                <option value="@Level.master">Master</option>
+            </select>
+        </div>
+            
+        <div class="form-group">
+            <label>Especialidade</label>
+            <input type="text" asp-for="Expertise" class="form-control" placholder="Digite sua área de especiazação" />
+        </div>
+            
+        </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
