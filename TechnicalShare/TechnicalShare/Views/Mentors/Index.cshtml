@@ -9,7 +9,7 @@
 
 <div style="margin-top:50px;" class="nav-tabs">
     <div class="nav-tabs-justified">
-        <div>           
+        <div>
             <div style="margin-top:50px;" class="nav-tabs">
                 <div class="container">
                     <div class="row">
@@ -50,60 +50,36 @@
                         </div>
 
                     </div>
-                    
+
                 </div>
-                               
+
             </div>
         </div>
     </div>
 </div>
 <h3 style="margin-top:70px"> ou ver nossa lista de mentores</h3>
-    <p style="margin-top:30px">Filtros:</p>
-    <a asp-controller="Mentor" asp-action="Frontend">Front-End</a>
-    <a asp-controller="Mentor" asp-action="Backend">Back-End</a>
+<p style="margin-top:30px">Filtros:</p>
+<a asp-controller="Mentor" asp-action="Frontend">Front-End</a>
+<a asp-controller="Mentor" asp-action="Backend">Back-End</a>
 
-    <table class="table table-striped table-hover" id="table-mentor">
-        <thead>
-            <tr>
-                <th>
-                    nome
-                </th>
-                <th>
-                    email
-                </th>
-                <th>
-                    área de atuação
-                </th>
-                <th>
-                    nível de experiência
-                </th>
-                <th>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Expertise.Name)                       
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Level)
-                    </td>
-                    <td>
-                        <a asp-action="Profile" asp-route-id="@item.Id">ver perfil</a>
-                    </td>
+<div class="row">
 
-                </tr>
-            }
-        </tbody>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img src="" style="width:100%">
+                <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
+                <p class="title">@Html.DisplayFor(modelItem => item.Position)</p>
+                <p>mentorias em @Html.DisplayFor(modelItem => item.Expertise.Name)</p>
+                <a asp-action="Profile" asp-route-id="@item.Id" class="btn btn-default">ver perfil</a>
+            </div>
+        </div>
+    }
 
-    </table>
+
+
+</div>
+
+
 
