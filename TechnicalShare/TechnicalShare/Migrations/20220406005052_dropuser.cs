@@ -69,13 +69,8 @@ namespace TechnicalShare.Migrations
                     table.PrimaryKey("PK_Mentee", x => x.Id);
                 });
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Mentor_Expertise_ExpertiseId",
-                table: "Mentor",
-                column: "ExpertiseId",
-                principalTable: "Expertise",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                       
+
 
             migrationBuilder.AddForeignKey(
                 name: "FK_MentorMentee_Mentee_MenteeId",

@@ -56,11 +56,5 @@ namespace TechnicalShare.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Add(Mentor mentor)
-        {
-            _mentorService.AddMentor(mentor);
-            return RedirectToAction("Index");
-        }
     }
 }

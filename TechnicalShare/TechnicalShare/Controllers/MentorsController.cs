@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using TechnicalShare.Data;
 using TechnicalShare.Services;
 using TechnicalShare.Models;
+using TechnicalShare.Models.ViewModels;
 
 namespace TechnicalShare.Controllers
 {
     public class MentorsController : Controller        
     {
-        private readonly IMentorService _mentorService;
+        private readonly MentorService _mentorService;
+        private readonly ExpertiseService _expertiseService;
 
-        public MentorsController(IMentorService mentorService)
+        public MentorsController(MentorService mentorService, ExpertiseService expertiseService)
         {
             _mentorService = mentorService;
+            _expertiseService = expertiseService;
         }
         public IActionResult Index()
         {
@@ -54,14 +57,17 @@ namespace TechnicalShare.Controllers
         }
         public IActionResult Register()
         {
-            return View();
+            var expertises = _expertiseService.FindAll();
+            var viewModel = new MentorFormViewModel { Expertises = expertises };
+            return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Add(Mentor mentor)
+        [ValidateAntiForgeryToken]
+        public IActionResult Register(Mentor mentor)
         {
-            _mentorService.AddMentor(mentor);
-            return RedirectToAction("Index");
+            _mentorService.Insert(mentor);
+            return RedirectToAction(nameof(Index));
         }
 
 

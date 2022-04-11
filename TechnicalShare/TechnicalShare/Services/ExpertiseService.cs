@@ -19,7 +19,7 @@ namespace TechnicalShare.Services
 
         public List<Expertise> FindAll()
         {
-            return _context.Expertise.ToList();
+            return _context.Expertise.OrderBy(obj => obj.Name).ToList();
         }
                      
         

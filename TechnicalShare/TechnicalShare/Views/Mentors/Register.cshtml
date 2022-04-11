@@ -1,5 +1,5 @@
 ﻿@using TechnicalShare.Models.Enums
-@model TechnicalShare.Models.Mentor
+@model TechnicalShare.Models.ViewModels.MentorFormViewModel
 @{
     ViewData["Title"] = "Cadastrar-se";
 }
@@ -8,32 +8,32 @@
     <h1 class="display-4">Cadastro de novo mentor</h1>
 </div>
 
-<form asp-controller="Mentors" asp-action="Add" method="post">
+<form asp-controller="Mentors" asp-action="Register" method="post">
 
     <div>
         <div class="form-group">
             <label>Nome</label>
-            <input type="text" asp-for="Name" class="form-control" placholder="Digite seu nome" />
+            <input type="text" asp-for="Mentor.Name" class="form-control" placholder="Digite seu nome" />
         </div>
 
         <div class="form-group">
             <label>E-mail</label>
-            <input type="text" asp-for="Email" class="form-control" placholder="Digite seu e-mail" />
+            <input type="text" asp-for="Mentor.Email" class="form-control" placholder="Digite seu e-mail" />
         </div>
             
         <div class="form-group">
             <label>Senha</label>
-            <input type="text" asp-for="Password" class="form-control" placholder="Digite sua senha" />
+            <input type="text" asp-for="Mentor.Password" class="form-control" placholder="Digite sua senha" />
         </div>
             
         <div class="form-group">
-            <label>Área</label>
-            <input type="text" asp-for="Position" class="form-control" placholder="Digite seu área de atuação" />
+            <label>Posição atual</label>
+            <input type="text" asp-for="Mentor.Position" class="form-control" placholder="Digite sua posição atual" />
         </div>
             
         <div class="form-group">
-            <label>Cargo</label>
-            <select asp-for="Level" class="form-control">
+            <label>Nível de experiência</label>
+            <select asp-for="Mentor.Level" class="form-control">
                 <option value="@Level.junior">Junior</option>
                 <option value="@Level.pleno">Pleno</option>
                 <option value="@Level.senior">Senior</option>
@@ -42,8 +42,9 @@
         </div>
             
         <div class="form-group">
-            <label>Especialidade</label>
-            <input type="text" asp-for="Expertise" class="form-control" placholder="Digite sua área de especiazação" />
+            <label>Área de especialidade</label>
+            <select asp-for="Mentor.ExpertiseId" asp-items="@(new SelectList(Model.Expertises, "Id", "Name"))" class="form-control"></select>       
+        
         </div>
             
         </div>

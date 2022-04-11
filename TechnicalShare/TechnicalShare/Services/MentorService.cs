@@ -40,12 +40,11 @@ namespace TechnicalShare.Services
 
             return FilteredList;
         }
-
-        public Mentor AddMentor(Mentor mentor)
-        {
-            _context.Mentor.Add(mentor);
+             
+        public void Insert(Mentor obj)
+        {           
+            _context.Add(obj);
             _context.SaveChanges();
-            return mentor;
         }
     }
 }

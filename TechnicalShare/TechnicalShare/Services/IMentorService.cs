@@ -5,7 +5,7 @@ namespace TechnicalShare.Services
 {
     public interface IMentorService
     {
-        Mentor AddMentor(Mentor mentor);
+        void Insert(Mentor obj);
         List<Mentor> FindAll();
         List<Mentor> FilterById(int Id);
         Mentor FindbyId(int id);
