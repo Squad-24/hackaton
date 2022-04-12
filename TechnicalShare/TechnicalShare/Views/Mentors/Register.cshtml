@@ -14,23 +14,27 @@
         <div class="form-group">
             <label>Nome</label>
             <input type="text" asp-for="Mentor.Name" class="form-control" placholder="Digite seu nome" />
+            <span asp-validation-for="Mentor.Name" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label>E-mail</label>
             <input type="text" asp-for="Mentor.Email" class="form-control" placholder="Digite seu e-mail" />
+            <span asp-validation-for="Mentor.Email" class="text-danger"></span>
         </div>
-            
+
         <div class="form-group">
             <label>Senha</label>
             <input type="text" asp-for="Mentor.Password" class="form-control" placholder="Digite sua senha" />
+            <span asp-validation-for="Mentor.Password" class="text-danger"></span>
         </div>
-            
+
         <div class="form-group">
-            <label>Posição atual</label>
-            <input type="text" asp-for="Mentor.Position" class="form-control" placholder="Digite sua posição atual" />
+            <label>Cargo atual</label>
+            <input type="text" asp-for="Mentor.Position" class="form-control" placholder="Digite seu cargo atual" />
+            <span asp-validation-for="Mentor.Position" class="text-danger"></span>
         </div>
-            
+
         <div class="form-group">
             <label>Nível de experiência</label>
             <select asp-for="Mentor.Level" class="form-control">
@@ -40,14 +44,18 @@
                 <option value="@Level.master">Master</option>
             </select>
         </div>
-            
+
         <div class="form-group">
             <label>Área de especialidade</label>
-            <select asp-for="Mentor.ExpertiseId" asp-items="@(new SelectList(Model.Expertises, "Id", "Name"))" class="form-control"></select>       
-        
+            <select asp-for="Mentor.ExpertiseId" asp-items="@(new SelectList(Model.Expertises, "Id", "Name"))" class="form-control"></select>
+
         </div>
-            
-        </div>
+
+    </div>
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using TechnicalShare.Models.Enums;
 
 namespace TechnicalShare.Models
@@ -9,14 +7,19 @@ namespace TechnicalShare.Models
     public class Mentor : IMentor
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "*")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "*")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "*")]
         public string Password { get; set; }
+        [Required(ErrorMessage = "*")]
         public string Position { get; set; }
+        [Required(ErrorMessage = "*")]
         public Level Level { get; set; }
-
+        [Required(ErrorMessage = "*")]
         public Expertise Expertise { get; set; }
-
+        [Required(ErrorMessage = "*")]
         public int ExpertiseId { get; set; }       
         public string ExpertiseName { get; set; }
        
