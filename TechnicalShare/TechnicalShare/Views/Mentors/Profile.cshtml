@@ -11,7 +11,7 @@
         <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>
         <p>mentorias em @Html.DisplayFor(model => model.Expertise.Name)</p>
     </div>
-    <div>
+    <div class="profile-btn">
         <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id" class="btn btn-default">agendar</a>
     </div>
 </div>
