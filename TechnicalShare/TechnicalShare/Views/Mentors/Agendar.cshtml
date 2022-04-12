@@ -7,17 +7,17 @@
 
 <form method="POST" asp-action="Agendar">
 
-    <p>
-        <label style="margin-top:50px" asp-for="Mentor.Name">Agendamento com o(a) mentor(a): @Html.DisplayFor(model => model.Mentor.Name)</label>
+    <p class="schedule-title">
+        <label  asp-for="Mentor.Name">Agendamento com o(a) mentor(a): @Html.DisplayFor(model => model.Mentor.Name)</label>
     </p>
 
-    <p>
+    <p class="schedule">
         <label asp-for="dateTimeMentor">Data e hora</label>
         <input type="datetime-local" id="meeting-time"
                name="meeting-time" value="2022-07-04T00:30"
                min="2022-07-04T00:30" asp-for="dateTimeMentor" />
     </p>
-    <p>
-        <input type="submit" class="btn btn-default" value="Agendar">
+    <p class="schedule-btn">
+        <input type="submit" value="Agendar">
     </p>
 </form>
