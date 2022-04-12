@@ -1,139 +1,67 @@
-﻿@model IEnumerable<TechnicalShare.Models.Mentor>
+@model IEnumerable<TechnicalShare.Models.Mentor>
 
 @{
-    ViewData["Title"] = "você pode encontrar seu mentor por área de mentoria";
+    ViewData["Title"] = "Encontre conteúdo na área que você busca";
 }
-<h2 style="margin-top:50px">
+<h2 class="mentors-title">
     @ViewData["Title"]
 </h2>
 
-<div style="margin-top:50px;" class="nav-tabs">
-    <div class="nav-tabs-justified" style="text-align:center">
-        <div>
-            <div style="margin-top:50px;" class="nav-tabs">
-                <div class="container">
-                    <div class="row" style="justify-content:center">
-                        <div role="list" class="col-md-1" style="width:80px">
-                            <div role="listitem">
-                                <a href="expertises/adobe" class="btn btn-default">adobe</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:100px">
-                            <div role="listitem">
-                                <a href="expertises/backend" class="btn btn-default">back-end</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-2" style="width:150px">
-                            <div role="listitem">
-                                <a href="expertises/cloudcomputing" class="btn btn-default">cloud computing</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:70px">
-                            <div role="listitem">
-                                <a href="expertises/csharp" class="btn btn-default">c#</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:130px">
-                            <div role="listitem">
-                                <a href="expertises/datascience" class="btn btn-default">data science</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:100px">
-                            <div role="listitem">
-                                <a href="expertises/devops" class="btn btn-default">devops</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:110px">
-                            <div role="listitem">
-                                <a href="expertises/frontend" class="btn btn-default">front-end</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:120px">
-                            <div role="listitem">
-                                <a href="expertises/htmlcss" class="btn btn-default">html e css</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:80px">
-                            <div role="listitem">
-                                <a href="expertises/java" class="btn btn-default">java</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:110px">
-                            <div role="listitem">
-                                <a href="expertises/javascript" class="btn btn-default">javascript</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1">
-                            <div role="listitem">
-                                <a href="expertises/mobile" class="btn btn-default">mobile</a>
-                            </div>
-                        </div>
+<div class="tags-container">
+        
+    <a href="expertises/adobe" class="btn btn-default">adobe</a>
 
-                    </div>
-                    <div style="margin-top:20px"></div>
+    <a href="expertises/backend" class="btn btn-default">back-end</a>
 
-                    <div class="row" style="justify-content:center">
-                        <div role="list" class="col-md-1">
-                            <div role="listitem">
-                                <a href="expertises/nodejs" class="btn btn-default">node.js</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:70px">
-                            <div role="listitem">
-                                <a href="expertises/php" class="btn btn-default">php</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-2" style="width:150px">
-                            <div role="listitem">
-                                <a href="expertises/productdesign" class="btn btn-default">product design</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:100px">
-                            <div role="listitem">
-                                <a href="expertises/python" class="btn btn-default">python</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:80px">
-                            <div role="listitem">
-                                <a href="expertises/react" class="btn btn-default">react</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:110px">
-                            <div role="listitem">
-                                <a href="expertises/typescript" class="btn btn-default">typescript</a>
-                            </div>
-                        </div>
-                        <div role="list" class="col-md-1" style="width:150px">
-                            <div role="listitem">
-                                <a href="expertises/uxui" class="btn btn-default">ux/ui design</a>
-                            </div>
-                        </div>                       
+    <a href="expertises/cloudcomputing" class="btn btn-default">cloud computing</a>
 
-                    </div>
-                </div>
+    <a href="expertises/csharp" class="btn btn-default">c#</a>
 
-            </div>
-        </div>
-    </div>
+    <a href="expertises/datascience" class="btn btn-default">data science</a>
+
+    <a href="expertises/devops" class="btn btn-default">devops</a>
+
+    <a href="expertises/frontend" class="btn btn-default">front-end</a>
+
+    <a href="expertises/htmlcss" class="btn btn-default">html e css</a>
+
+    <a href="expertises/java" class="btn btn-default">java</a>
+
+    <a href="expertises/javascript" class="btn btn-default">javascript</a>
+
+    <a href="expertises/mobile" class="btn btn-default">mobile</a>
+
+    <a href="expertises/nodejs" class="btn btn-default">node.js</a>
+
+    <a href="expertises/php" class="btn btn-default">php</a>
+
+    <a href="expertises/productdesign" class="btn btn-default">product design</a>
+
+    <a href="expertises/python" class="btn btn-default">python</a>
+
+    <a href="expertises/react" class="btn btn-default">react</a>
+
+    <a href="expertises/typescript" class="btn btn-default">typescript</a>
+
+    <a href="expertises/uxui" class="btn btn-default">ux/ui design</a>
+                            
 </div>
-<h3 style="margin-top:70px"> ou ver nossa lista de mentores</h3>
-<p style="margin-top:30px">Filtros:</p>
-<a asp-controller="Mentor" asp-action="Frontend">Front-End</a>
-<a asp-controller="Mentor" asp-action="Backend">Back-End</a>
+    
+<h3 class="mentors-sub"> Ou veja nossa lista de mentores</h3>
 
-<div class="row" style="text-align:center">
+<div class="cards-container">
 
     @foreach (var item in Model)
     {
-        <div class="col-md-4">
-            <div class="card">
-                <img src="" style="width:100%">
-                <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
-                <p class="title">@Html.DisplayFor(modelItem => item.Position)</p>
-                <p>mentorias em @Html.DisplayFor(modelItem => item.Expertise.Name)</p>
-                <a asp-action="Profile" asp-route-id="@item.Id" class="btn btn-default">ver perfil</a>
-            </div>
+        <div class="card">
+        <img src="~/images/foto.png" width="300" height="300"/>
+        <div class="card-content">
+            <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
+            <p class="title">@Html.DisplayFor(modelItem => item.Position)</p>
+            <p>mentorias em @Html.DisplayFor(modelItem => item.Expertise.Name)</p>
+            <a asp-action="Profile" asp-route-id="@item.Id" class="btn btn-primary" role="button">ver perfil</a>
         </div>
+    </div>
     }
 
 </div>
