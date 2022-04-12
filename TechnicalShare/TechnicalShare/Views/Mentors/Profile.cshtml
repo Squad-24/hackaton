@@ -1,17 +1,36 @@
-﻿@model TechnicalShare.Models.Mentor
+﻿@using TechnicalShare.Models
+@model TechnicalShare.Models.Mentor
 @{
     ViewData["Title"] = "perfil de " + Model.Name;
 }
 
 
-<div class="profile-card">
-    <img src="~/images/foto.png" width="300" height="300"/>
+<div class="profile-card" style="text-align:center">
+    <img src="~/images/foto.png" style="margin-top:50px" width="300" height="300"/>
     <div class="card-content">
         <h1>@Html.DisplayFor(model => model.Name)</h1>
         <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>
         <p>mentorias em @Html.DisplayFor(model => model.Expertise.Name)</p>
     </div>
     <div class="profile-btn">
-        <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id" class="btn btn-default">agendar</a>
+
+        <form method="POST" asp-action="Agendar">
+
+            <p class="schedule-title">
+                <label asp-for="Name">agendamento com o(a) mentor(a): @Html.DisplayFor(model => model.Name)</label>
+            </p>
+
+            <p class="schedule">
+                <label>Data e hora</label>
+                <input type="datetime-local" id="meeting-time"
+                       name="meeting-time" value="@DateTime.Now"
+                       min="@DateTime.Now/>
+            </p>
+            <p class="schedule-btn">
+                <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id" class="btn">agendar</a>
+            </p>
+        </form>
+
+        
     </div>
 </div>

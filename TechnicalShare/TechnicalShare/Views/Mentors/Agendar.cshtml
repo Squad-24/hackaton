@@ -1,23 +1,7 @@
 ﻿@model TechnicalShare.Models.CalendarMentor
 
-@{
-    ViewData["Title"] = "Agendar com " + Model.Mentor.Name;
-}
 
-
-<form method="POST" asp-action="Agendar">
-
-    <p class="schedule-title">
-        <label  asp-for="Mentor.Name">Agendamento com o(a) mentor(a): @Html.DisplayFor(model => model.Mentor.Name)</label>
-    </p>
-
-    <p class="schedule">
-        <label asp-for="dateTimeMentor">Data e hora</label>
-        <input type="datetime-local" id="meeting-time"
-               name="meeting-time" value="2022-07-04T00:30"
-               min="2022-07-04T00:30" asp-for="dateTimeMentor" />
-    </p>
-    <p class="schedule-btn">
-        <input type="submit" value="Agendar">
-    </p>
-</form>
+<div class="home-grid02" style="margin-top: 40px">
+    <h2>legal! você marcou uma mentoria. agora...</h2>
+    <p>seja pontual e se prepare com tópicos e perguntas para a conversa. informamos que nossa plataforma é um ambiente seguro, inclusivo e não toleramos nenhuma forma de desrespeito. bons estudos e uma ótima mentoria!</p>  
+</div>
