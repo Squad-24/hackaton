@@ -7,6 +7,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -20,34 +27,31 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">technical share</a>
+    <<nav class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <a asp-area="" asp-controller="Home" asp-action="Index">technical share</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">home</a></li>                    
-                    <li><a asp-area="" asp-controller="Mentors" asp-action="Index">mentores</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">sobre</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">contato</a></li>
-                    <li><a asp-area="" asp-controller="Mentors" asp-action="Register">cadastre-se</a></li>
-                </ul>
+            <form class="header-search">
+                <input type="text" placeholder="Buscar Mentor">
+                <button type="submit"><img src="~/images/search-icon.png" width="23" height="23"></button>
+            </form>
+            <div class="header-links">
+                <a asp-area="" asp-controller="Mentors" asp-action="Index">mentores</a>
+                <a asp-area="" asp-controller="Home" asp-action="About">sobre</a>
+                <a asp-area="" asp-controller="Home" asp-action="Contact">contato</a>
+                <a asp-area="" asp-controller="Mentors" asp-action="Register">cadastre-se</a>
+            </div>
+            <div class="header-login-btn">
+                <a asp-area="" asp-controller="Mentors" asp-action="Login" role="button"><img src="~/images/login-icon.png" width="27" height="31" />Fazer Login</a>
             </div>
         </div>
     </nav>
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
+    <div>
         @RenderBody()
-        <hr />
         <footer>
             <p>&copy; 2022 - TechnicalShare</p>
         </footer>
@@ -55,7 +59,6 @@
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
@@ -65,9 +68,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
         </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+        <script asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
