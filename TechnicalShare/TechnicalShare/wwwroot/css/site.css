@@ -1,38 +1,381 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    background: #070707;
+    padding-top: 30px;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.header {
+    border-bottom: 3px solid #FE4400;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.header-logo a {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.header-search input {
+    margin-bottom: 30px;
+    padding: 12px 20px;
+    width: 427px;
+    height: 46px;
+    background: #303033;
+    box-shadow: 4px 4px 0px #FE4400;
+    border-radius: 30px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #FFFFFF;
 }
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    
+    .header-search input::placeholder {
+        color: #FFFFFF;
+        opacity: 1;
     }
+    .header-search input:-ms-input-placeholder {
+        color: #FFFFFF;
+    }
+
+.header-search button {
+    background: #303033;
+    margin-left: -50px;
+    padding: 0px;
+    border-width: 0px;
+    border-style: none;
+    border-color: none
 }
 
+.header-links a {
+    width: 48px;
+    height: 28px;
+    margin: 45px 52px;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.header-login-btn {
+    width: 221px;
+    height: 61px;
+    background: #070707;
+    border: 1px solid #FE4400;
+    border-radius: 10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+    .header-login-btn a {
+        text-decoration: none;
+        color: #FFFFFF;
+        margin: 8px 13px;
+    }
+
+        .header-login-btn a img {
+            margin: 0px 12px;
+        }
+
+    .home-grid01 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 5%;
+    }
+
+    .home-grid01 h1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 70%;
+        font-family: "Alfa Slab One";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 66px;
+        color: #FE4400;
+    }
+
+    .home-grid01 h3 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 70%;
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+        color: #FFFFFF
+    }
+
+    .home-grid01 button {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        background: #FE4400;
+        box-shadow: 8px 8px 0px #303033;
+        border-radius: 10px;
+        width: 313px;
+        height: 81px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        color: #1B0A04;
+    }
+
+    .home-grid01 img {
+        grid-column: 2/4;
+        grid-row: 1/4;
+    }
+
+.home-grid02 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 5%;
+}
+
+    .home-grid02 img {
+        grid-column: 1/3;
+        grid-row:1/3;
+        margin-right: 24px;
+    }
+
+    .home-grid02 h2 {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        width: 60%;
+        font-family: "Alfa Slab One";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 44px;
+        color: #FE4400;
+    }
+
+    .home-grid02 p {
+        grid-column: 3/4;
+        grid-row: 2/3;
+        width: 60%;
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        color: #FFFFFF;
+    }
+
+.home-grid03 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 5%;
+}
+
+    .home-grid03 h4 {
+        grid-column: 1/3;
+        grid-row: 1/1;
+        font-family: 'Alfa Slab One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 55px;
+        text-align: left;
+        color: #FE4400;
+        margin-bottom: 52px;
+    }
+
+    .home-grid03 .img1 {
+        grid-column: 1/2;
+        grid-row: 2/4;
+        width: 50%;
+    }
+
+    .home-grid03 .img2 {
+        grid-column: 2/3;
+        grid-row: 2/4;
+        width: 50%;
+    }
+
+    .home-grid03 .img3 {
+        grid-column: 3/4;
+        grid-row: 2/4;
+        width: 60%;
+    }
+
+.home-grid04 {
+
+}
+
+    .home-grid04 h5 {
+        font-family: 'Alfa Slab One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 55px;
+        color: #FE4400;
+        text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+    }
+
+footer {
+    border-top: 3px solid #FE4400;
+    line-height: 60px;
+    margin-top: 30px;
+    color: #FFFFFF;
+}
+
+.mentors-title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FE4400;
+    text-align: center;
+}
+
+.tags-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 28px;
+    column-gap: 42px
+}
+
+    .tags-container a {
+        width: 236px;
+        height: 64px;
+        background: #FE4400;
+        box-shadow: 8px 8px 0px #303033;
+        border-radius: 10px;
+        text-decoration: none;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        color: #1B0A04;
+        text-align: center;
+        padding-top: 18px;
+        margin: 0px 68px;
+    }
+
+.mentors-sub {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    color: #FE4400;
+    text-align: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    row-gap: 68px;
+    margin: 68px;
+}
+
+.card {
+    width: 300px;
+    height: 550px;
+    background: #303033;
+    color: #FFFFFF;
+    border-radius: 50px;
+    text-align: center;
+}
+
+    .card img {
+        border-radius: 50px;
+    }
+
+    .card a {
+        text-decoration: none;
+        width: 100px;
+        height: 48px;
+        border: 2px solid #FE4400;
+        border-radius: 18px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        color: #FFFFFF;
+        padding: 6px;
+    }
+
+    .profile {
+        color: #FFFFFF;
+        margin: 56px;
+        font-size: 28px;
+    }
+
+.profile-btn a {
+    text-decoration: none;
+    color: #070707;
+    width: 236px;
+    height: 64px;
+    background: #FE4400;
+    box-shadow: 8px 8px 0px #4B1400;
+    border-radius: 32px;
+    margin: 56px;
+}
+
+.schedule-title label {
+    color: #FFFFFF;
+    margin-left: 50px;
+    font-size: 28px;
+}
+
+.schedule {
+    color: #FFFFFF;
+    margin-left: 50px;
+    font-size: 28px;
+}
+
+    .schedule input {
+        margin-bottom: 30px;
+        padding: 12px 20px;
+        width: 180px;
+        height: 32px;
+        background: #303033;
+        box-shadow: 4px 4px 0px #FE4400;
+        border-radius: 30px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+.schedule-btn {
+    text-decoration: none;
+    color: #070707;
+    width: 120px;
+    height: 42px;
+    background: #FE4400;
+    box-shadow: 8px 8px 0px #4B1400;
+    border-radius: 32px;
+    margin: 56px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.schedule-btn input {
+    margin-top: 8px;
+}
