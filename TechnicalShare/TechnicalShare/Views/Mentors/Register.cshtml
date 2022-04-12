@@ -25,7 +25,7 @@
 
         <div class="form-group">
             <label>Senha</label>
-            <input type="text" asp-for="Mentor.Password" class="form-control" placholder="Digite sua senha" />
+            <input type="password" asp-for="Mentor.Password" class="form-control" placholder="Digite sua senha" />
             <span asp-validation-for="Mentor.Password" class="text-danger"></span>
         </div>
 
@@ -46,9 +46,8 @@
         </div>
 
         <div class="form-group">
-            <label>Área de especialidade</label>
+            <label>Principal área de especialidade para mentoria</label>
             <select asp-for="Mentor.ExpertiseId" asp-items="@(new SelectList(Model.Expertises, "Id", "Name"))" class="form-control"></select>
-
         </div>
 
     </div>
