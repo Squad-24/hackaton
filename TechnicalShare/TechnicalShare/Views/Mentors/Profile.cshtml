@@ -4,14 +4,12 @@
 }
 
 
-<div class="row">
-    <div>
-        <div class="card" style="margin-top:60px">
-            <img src="" style="width:100%">
-            <h1>@Html.DisplayFor(model => model.Name)</h1>
-            <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>
-            <p>mentorias em @Html.DisplayFor(model => model.Expertise.Name)</p>
-        </div>
+<div class="profile-card">
+    <img src="~/images/foto.png" width="300" height="300"/>
+    <div class="card-content">
+        <h1>@Html.DisplayFor(model => model.Name)</h1>
+        <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>
+        <p>mentorias em @Html.DisplayFor(model => model.Expertise.Name)</p>
     </div>
     <div>
         <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id" class="btn btn-default">agendar</a>
