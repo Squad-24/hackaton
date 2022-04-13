@@ -1,43 +1,106 @@
-﻿@using TechnicalShare.Models
+@using TechnicalShare.Models
 @model TechnicalShare.Models.Mentor
 @{
     ViewData["Title"] = "perfil de " + Model.Name;
 }
 
-<div class="profile">
-    <img src="~/images/foto.png" width="343" height="404" />
-    <h1>@Html.DisplayFor(model => model.Name)</h1>
-    <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>
-    <p class="profile-tags">@Html.DisplayFor(model => model.Expertise.Name)</p>
-    <p class="profile-description">Descrição do mentor</p>
+<div class="profile-card" style="text-align:center; height:600px">
+    <img src="~/images/foto.png" style="margin-top:50px" width="300" height="300" />
+    <div class="card-content">
+        <h1>@Html.DisplayFor(model => model.Name)</h1>
+        <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>
+        <p>mentorias em @Html.DisplayFor(model => model.Expertise.Name)</p>
+    </div>
 </div>
 
-<h2 class="profile-txt">Mentorias Disponíveis</h2>
+<div class="profile-btn" style="text-align:center">
+    <form method="POST" asp-action="Agendar">
+        <p class="schedule-title" style="margin-top:-50px">
+            <label asp-for="Name">agendamento com o(a) mentor(a): @Html.DisplayFor(model => model.Name)</label>
+        </p>
+        <p class="schedule">
+            <label>datas e horários disponíveis para a próxima semana</label>
+            <div class="row" style="align-items:center">
+                <div class="col-md-2" style="width:210px">
+                    <div class="card card-content" style="width:210px; height:200px">
+                        @Html.DisplayFor(model => model.Day) de abril
+                        <p>
+                            <button type="button" class="schedule-btn">
+                                @Html.DisplayFor(model => model.Slot)
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-2" style="width:210px">
+                    <div class="card card-content" style="width:210px; height:200px">
+                        @Html.DisplayFor(model => model.Day1) de abril
+                        <p>
+                            <button type="button" class="schedule-btn">
+                                @Html.DisplayFor(model => model.Slot1)
+                            </button>
+                        </p>
+                    </div>
 
-<form class="profile-form" method="POST" asp-action="Agendar">
-    <div>
-        <p class="profile-txt1"></p><img src="~/images/pfl-icon01.png" />30 minutos</p>
-        <p class="profile-txt2"></p><img src="~/images/pfl-icon02.png" />Mntoria por videoconferência</p>
-    </div>
+                </div>
+                <div class="col-md-2" style="width:210px">
+                    <div class="card card-content" style="width:210px; height:200px">
+                        @Html.DisplayFor(model => model.Day2) de abril
+                        <p>
+                            <button type="button" class="schedule-btn">
+                                @Html.DisplayFor(model => model.Slot2)
+                            </button>
+                        </p>
+                    </div>
 
-    <div>
-        <button type="button" class="schedule-btn">
-            @Html.DisplayFor(model => model.Slot)
+                </div>
+                <div class="col-md-2" style="width:210px">
+                    <div class="card card-content" style="width:210px; height:200px">
+                        @Html.DisplayFor(model => model.Day3) de abril
+                        <p>
+                            <button type="button" class="schedule-btn">
+                                @Html.DisplayFor(model => model.Slot3)
+                            </button>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-2" style="width:210px">
+                    <div class="card card-content" style="width:210px; height:200px">
+                        @Html.DisplayFor(model => model.Day4) de abril
+                        <p>
+                            <button type="button" class="schedule-btn">
+                                @Html.DisplayFor(model => model.Slot4)
+                            </button>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-2" style="width:210px">
+                    <div class="card card-content" style="width:210px; height:200px">
+                        @Html.DisplayFor(model => model.Day5) de abril
+                        <p>
+                            <button type="button" class="schedule-btn">
+                                @Html.DisplayFor(model => model.Slot5)
+                            </button>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-2" style="width:210px">
+                    <div class="card card-content" style="width:210px; height:200px">
+                        @Html.DisplayFor(model => model.Day6) de abril
+                        <p>
+                            <button type="button" class="schedule-btn">
+                                @Html.DisplayFor(model => model.Slot6)
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </p>
+
+        <button class="schedule-btn" style="text-align:center; margin:auto">
+            <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id">agendar</a>
         </button>
-        <button type="button" class="schedule-btn">
-            @Html.DisplayFor(model => model.Slot1)
-        </button>
-        <button type="button" class="schedule-btn">
-            @Html.DisplayFor(model => model.Slot2)
-        </button>
-    </div>
-
-    <div>
-        <button class="profile-btn" style="text-align:center; margin:auto">
-            <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id">Confirmar Mentoria</a>
-        </button>
-    </div>
-
-    <div>Calendário</div>
-</form>
-
+    </form>
+</div>
