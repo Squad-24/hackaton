@@ -16,7 +16,6 @@ namespace TechnicalShare.Models
         string Password { get; set; }
         string Position { get; set; }
 
-        void AddMentee(MentorMentee mentee);
-        void RemoveMentee(MentorMentee mentee);
+       
     }
 }

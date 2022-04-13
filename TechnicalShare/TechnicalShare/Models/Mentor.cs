@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using TechnicalShare.Models.Enums;
 
@@ -22,8 +23,23 @@ namespace TechnicalShare.Models
         [Required(ErrorMessage = "*")]
         public int ExpertiseId { get; set; }       
         public string ExpertiseName { get; set; }
-       
+        public int Day { get; set; }
+        public int Day1 { get; set; }
+        public int Day2 { get; set; }
+        public int Day3 { get; set; }
+        public int Day4 { get; set; }
+        public int Day5 { get; set; }
+        public int Day6 { get; set; }
+        public string Slot { get; set; }
+        public string Slot1 { get; set; }
+        public string Slot2 { get; set; }
+        public string Slot3 { get; set; }
+        public string Slot4 { get; set; }
+        public string Slot5 { get; set; }
+        public string Slot6 { get; set; }
+
         public ICollection<MentorMentee> Mentees { get; set; } = new List<MentorMentee>();
+   /*
         public Mentor()
         {
 
@@ -59,7 +75,7 @@ namespace TechnicalShare.Models
         {
             Mentees.Remove(mentee);
         }
-
+   */
        
     }
 }

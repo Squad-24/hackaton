@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TechnicalShare.Models;
+using System.Globalization;
 
 namespace TechnicalShare.Data
 {
@@ -41,21 +42,16 @@ namespace TechnicalShare.Data
             Expertise expertise16 = new Expertise(16, "react");
             Expertise expertise17 = new Expertise(17, "ui/ux design");
 
+                        
 
-
-            Mentor mentor2 = new Mentor("maria", "maria@hotmail.com", "1234567", "desenvolvedora full stack", Models.Enums.Level.senior, expertise);
-            Mentor mentor6 = new Mentor("mariana", "mariana@hotmail.com", "1234567", "devops", Models.Enums.Level.senior, expertise2);
-            Mentor mentor1 = new Mentor("joão", "joão@hotmail.com", "1234567", "desenvolvedor front-end", Models.Enums.Level.pleno, expertise3);
-            Mentor mentor3 = new Mentor("paula", "paula@hotmail.com", "1234567", "desenvolvedora mobile", Models.Enums.Level.junior, expertise4);
-            Mentor mentor4 = new Mentor("jorge", "jorge@hotmail.com", "1234567", "ui designer", Models.Enums.Level.pleno, expertise6);
-            Mentor mentor5 = new Mentor("gustavo", "gustavo@hotmail.com", "1234567", "ux designer", Models.Enums.Level.senior, expertise7);
-            Mentor mentor7 = new Mentor("victor", "victor@hotmail.com", "1234567", "product manager", Models.Enums.Level.pleno, expertise5);
+            Mentor mentor1 = new Mentor { Name = "João", Email = "joao@gmail.com", Position = "Desenvolvedor Front-end", Level = Models.Enums.Level.pleno, Expertise = expertise8, Day = 16, Day1 = 17, Day2 = 18, Day3 = 19, Day4 = 20, Day5 = 21, Day6 = 22, Slot = "14:00h", Slot1 = "15:00h", Password = "123456" };
+            Mentor mentor2 = new Mentor { Name = "Maria", Email = "mariana@hotmail.com", Position = "DevOps", Level = Models.Enums.Level.pleno, Expertise = expertise6, Day = 16, Day1 = 17, Day2 = 18, Day3 = 19, Day4 = 20, Day5 = 21, Day6 = 22, Slot = "16:00h", Slot1 = "17:00h", Slot2 = "17:00h", Password = "12233445" };
 
 
 
             _context.Expertise.AddRange(expertise, expertise2, expertise3, expertise4, expertise5, expertise6, expertise7, expertise8,
                 expertise9, expertise10, expertise11, expertise12, expertise13, expertise14, expertise15, expertise16, expertise17);
-            _context.Mentor.AddRange(mentor1, mentor2, mentor3, mentor4, mentor5, mentor6, mentor7);
+            _context.Mentor.AddRange(mentor1, mentor2);
             _context.SaveChanges();
         }
 

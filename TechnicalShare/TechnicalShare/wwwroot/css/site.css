@@ -343,7 +343,8 @@ footer {
 .schedule {
     color: #FFFFFF;
     margin-left: 50px;
-    font-size: 28px;    
+    font-size: 28px;
+    align-content: center;
 }
 
     .schedule input {
@@ -374,6 +375,7 @@ footer {
     margin: 56px;
     text-align: center;
     margin-left: 50px;
+    align-content: center;
 }
 
 .schedule-btn input {

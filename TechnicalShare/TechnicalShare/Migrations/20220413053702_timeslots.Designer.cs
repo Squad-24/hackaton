@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechnicalShare.Data;
 
 namespace TechnicalShare.Migrations
 {
     [DbContext(typeof(TechnicalShareContext))]
-    partial class TechnicalShareContextModelSnapshot : ModelSnapshot
+    [Migration("20220413053702_timeslots")]
+    partial class timeslots
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,19 +102,17 @@ namespace TechnicalShare.Migrations
                     b.Property<string>("Position")
                         .IsRequired();
 
-                    b.Property<string>("Slot");
+                    b.Property<int>("Slot");
 
-                    b.Property<string>("Slot1");
+                    b.Property<int>("Slot1");
 
-                    b.Property<string>("Slot2");
+                    b.Property<int>("Slot2");
 
-                    b.Property<string>("Slot3");
+                    b.Property<int>("Slot3");
 
-                    b.Property<string>("Slot4");
+                    b.Property<int>("Slot4");
 
-                    b.Property<string>("Slot5");
-
-                    b.Property<string>("Slot6");
+                    b.Property<int>("Slot5");
 
                     b.HasKey("Id");
 
