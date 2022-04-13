@@ -35,7 +35,7 @@ NuGet
 
 ## 🖇️ Colaboradores/Mentores
 - Maria Leticia
-- Larissa Orikava
+- Jack Tanaka
 - Duda Pinheiro
 - Ralf Schaefer
 
