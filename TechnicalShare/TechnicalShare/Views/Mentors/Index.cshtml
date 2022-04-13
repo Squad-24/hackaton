@@ -48,22 +48,21 @@
 </div>
     
 <h3 class="mentors-sub"> Ou veja nossa lista de mentores</h3>
-
-<div class="cards-container">
-
-    @foreach (var item in Model)
-    {
-        <div class="card">
-        <img src="~/images/foto.png" width="300" height="300"/>
-        <div class="card-content">
-            <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
-            <p class="title">@Html.DisplayFor(modelItem => item.Position)</p>
-            <p>mentorias em @Html.DisplayFor(modelItem => item.Expertise.Name)</p>
-            <a asp-action="Profile" asp-route-id="@item.Id" class="btn btn-primary" role="button">ver perfil</a>
-        </div>
+<div class="cards-background">
+    <div class="cards-container">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <a asp-action="Profile" asp-route-id="@item.Id" role="button">
+                    <img src="~/images/foto.png" width="308" height="326" />
+                    <div class="card-content">
+                        <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
+                        <p>mentorias em @Html.DisplayFor(modelItem => item.Expertise.Name)</p>
+                    </div>
+                </a>
+            </div>
+        }
     </div>
-    }
-
 </div>
 
 
