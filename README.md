@@ -4,7 +4,16 @@ Uma plataforma WEB onde os <strong>#SangueLaranja</strong> podem encontrar mento
 ## 🚀 O que a plataforma é capaz
 <p> :heavy_check_mark: Encontrar mentores e agendar mentorias </p> 
 <p> :heavy_check_mark: Encontrar um roadmap para áreas: Front-end, Back-end e UX/UI Designer <p> 
+ 
 
+## 🛠️ Construído com
+.NET MVC 
+NuGet 
+ 
+
+## :computer: Deploy da aplicação
+> Link do deploy da aplicação: 
+ 
 
 ## 📋 Pré-requisitos
 - :warning: .NET SDK 2.1.301
@@ -23,14 +32,7 @@ Uma plataforma WEB onde os <strong>#SangueLaranja</strong> podem encontrar mento
 
 ## Rodando a aplicação
 
-## :computer: Deploy da aplicação
-> Link do deploy da aplicação: 
 
-
-
-## 🛠️ Construído com
-.NET MVC 
-NuGet 
 
 
 ## 🖇️ Colaboradores/Mentores
