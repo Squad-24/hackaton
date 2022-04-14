@@ -467,7 +467,7 @@ body {
 
 /*Chat from here*/
 
-/* Estilo dos cards representando usu·rio logado */
+/* Estilo dos cards representando usu√°rio logado */
 
 .user {
     position: relative;
@@ -515,6 +515,9 @@ body {
 .main {
     display: flex;
     flex-direction: row;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
 }
 
 .chats_wrapper {
@@ -523,6 +526,9 @@ body {
     white-space: nowrap;
     display: flex;
     flex-direction: row-reverse;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
 }
 
     .chats_wrapper .chat {
@@ -601,7 +607,7 @@ body {
                 cursor: pointer;
             }
 
-/* Estilos genÈricos do chat */
+/* Estilos gen√©ricos do chat */
 
 .box_shadow_0 {
     width: 12.5%;
