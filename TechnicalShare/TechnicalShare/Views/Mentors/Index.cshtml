@@ -45,10 +45,10 @@
     
 <h3 class="mentors-sub"> Ou veja nossa lista de mentores</h3>
 <div class="cards-background">
-    <div class="cards-container">
+    <div class="cards-container" style="width:100%">
         @foreach (var item in Model)
         {
-            <div class="card">
+            <div class="card" style="width:100%">
                 <a asp-action="Profile" asp-route-id="@item.Id" role="button">
                     <img src="~/images/foto.png" width="308" height="326" />
                     <div class="card-content">
