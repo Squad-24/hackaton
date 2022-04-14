@@ -17,6 +17,10 @@ namespace TechnicalShare.Models
         [Required(ErrorMessage = "*")]
         public string Position { get; set; }
         [Required(ErrorMessage = "*")]
+        [StringLength(220, ErrorMessage = "máximo de 220 caracteres")]
+        public string Description { get; set; }
+                
+        [Required(ErrorMessage = "*")]
         public Level Level { get; set; }
         [Required(ErrorMessage = "*")]
         public Expertise Expertise { get; set; }
@@ -37,6 +41,14 @@ namespace TechnicalShare.Models
         public string Slot4 { get; set; }
         public string Slot5 { get; set; }
         public string Slot6 { get; set; }
+        public string Slot7 { get; set; }
+        public string Slot8 { get; set; }
+        public string Slot9 { get; set; }
+        public string Slot10 { get; set; }
+        public string Slot11 { get; set; }
+        public string Slot12 { get; set; }
+        public string Slot13 { get; set; }
+        public DateTime Schedule { get; set; }
 
         public ICollection<MentorMentee> Mentees { get; set; } = new List<MentorMentee>();
    /*

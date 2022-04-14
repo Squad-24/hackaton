@@ -81,7 +81,14 @@ namespace TechnicalShare.Controllers
             return View(calendarMentor);
         }
 
-       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+       public IActionResult Profile(DateTime schedule)
+        {
+            _mentorService.Schedule(schedule);
+            return RedirectToAction(nameof(Agendar));
+
+        }
 
     }
 }

@@ -1,43 +1,30 @@
 ﻿@using TechnicalShare.Models
 @model IEnumerable<Mentor>
 
-<table style="margin-top:50px" class="table table-striped table-hover" id="table-mentor">
-    <thead>
-        <tr>
-            <th>
-                nome
-            </th>
-            <th>
-                email
-            </th>
-            <th>
-                nível de experiência
-            </th>
-            <th>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Level)
-                </td>
-                <td>
-                    <a asp-controller="Mentors" asp-action="Profile" asp-route-id="@item.Id">ver perfil</a>
-                </td>
-                <td>
-                    <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@item.Id">agendar</a>
-                </td>
-            </tr>
-        }
-    </tbody>
+@if (Model != null)
+{
+    <h3 class="mentors-sub">Nossos mentores em PHP</h3>
+    <div class="cards-background">
+        <div class="cards-container">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <a asp-controller="Mentors" asp-action="Profile" asp-route-id="@item.Id" role="button">
+                        <img src="~/images/foto.png" width="308" height="326" />
+                        <div class="card-content">
+                            <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
+                            <p>mentorias em @Html.DisplayFor(modelItem => item.Expertise.Name)</p>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+}
 
-</table>
+else
+{
+    <div class="home-grid02" style="margin-top: 40px">
+        <h2>que pena! ainda não temos mentores nessa área</h2>
+    </div>
+}

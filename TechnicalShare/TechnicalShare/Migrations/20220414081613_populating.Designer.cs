@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechnicalShare.Data;
 
 namespace TechnicalShare.Migrations
 {
     [DbContext(typeof(TechnicalShareContext))]
-    partial class TechnicalShareContextModelSnapshot : ModelSnapshot
+    [Migration("20220414081613_populating")]
+    partial class populating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,7 +86,7 @@ namespace TechnicalShare.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(220);
+                        .HasMaxLength(120);
 
                     b.Property<string>("Email")
                         .IsRequired();

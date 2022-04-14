@@ -46,5 +46,13 @@ namespace TechnicalShare.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+
+        public void Schedule(DateTime schedule)
+        {
+            int day = schedule.Day;
+            string slot = schedule.Hour.ToString("HH:mm" + "h");
+            _context.AddRange(day, slot);
+            _context.SaveChanges();
+        }
     }
 }

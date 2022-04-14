@@ -25,40 +25,40 @@ namespace TechnicalShare.Controllers
             return View(list);
         }
 
-        public IActionResult Adobe()
+        public IActionResult BackEnd()
         {
             var list = _expertiseService.FilterById(1);
             return View(list);
         }
-        public IActionResult BackEnd()
+        public IActionResult Cplusplus()
         {
             var list = _expertiseService.FilterById(2);
             return View(list);
         }
 
-        public IActionResult CloudComputing()
+        public IActionResult Csharp()
         {
             var list = _expertiseService.FilterById(3);
             return View(list);
         }
 
-        public IActionResult Csharp()
+        public IActionResult DataScience()
         {
             var list = _expertiseService.FilterById(4);
             return View(list);
         }
 
-        public IActionResult DataScience()
+        public IActionResult DevOps()
         {
             var list = _expertiseService.FilterById(5);
             return View(list);
         }
-        public IActionResult DevOps()
+
+        public IActionResult Fullstack()
         {
             var list = _expertiseService.FilterById(6);
             return View(list);
         }
-
         public IActionResult FrontEnd()
         {
             var list = _expertiseService.FilterById(7);
@@ -70,12 +70,12 @@ namespace TechnicalShare.Controllers
             var list = _expertiseService.FilterById(8);
             return View(list);
         }
+
         public IActionResult Java()
         {
             var list = _expertiseService.FilterById(9);
             return View(list);
         }
-
         public IActionResult Javascript()
         {
             var list = _expertiseService.FilterById(10);
@@ -88,50 +88,36 @@ namespace TechnicalShare.Controllers
             return View(list);
         }
 
-        public IActionResult NodeJs()
+        public IActionResult Php()
         {
             var list = _expertiseService.FilterById(12);
             return View(list);
         }
 
-        public IActionResult Php()
+        public IActionResult ProductDesign()
         {
             var list = _expertiseService.FilterById(13);
             return View(list);
         }
-        public IActionResult ProductDesign()
+
+        public IActionResult ProductOwner()
         {
             var list = _expertiseService.FilterById(14);
             return View(list);
         }
-
-
         public IActionResult Python()
         {
             var list = _expertiseService.FilterById(15);
             return View(list);
         }
-        public IActionResult React()
+
+
+        public IActionResult UXUI()
         {
             var list = _expertiseService.FilterById(16);
             return View(list);
         }
-
-
-        public IActionResult TypeScript()
-        {
-            var list = _expertiseService.FilterById(17);
-            return View(list);
-        }
-
-
-        public IActionResult UIUX()
-        {
-            var list = _expertiseService.FilterById(18);
-            return View(list);
-        }
-
-
+     
 
 
 

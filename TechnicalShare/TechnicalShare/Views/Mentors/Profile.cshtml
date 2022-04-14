@@ -8,99 +8,191 @@
     <img src="~/images/foto.png" style="margin-top:50px" width="300" height="300" />
     <div class="card-content">
         <h1>@Html.DisplayFor(model => model.Name)</h1>
-        <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>
+        <p class="title">@Html.DisplayFor(model => model.Position) @Html.DisplayFor(model => model.Level)</p>        
+        <p style="margin-top:40px; justify-items:center">
+            @Html.DisplayFor(model => model.Description)
+        </p>
         <p>mentorias em @Html.DisplayFor(model => model.Expertise.Name)</p>
     </div>
 </div>
+
 
 <div class="profile-btn" style="text-align:center">
     <form method="POST" asp-action="Agendar">
         <p class="schedule-title" style="margin-top:-50px">
             <label asp-for="Name">agendamento com o(a) mentor(a): @Html.DisplayFor(model => model.Name)</label>
         </p>
-        <p class="schedule">
+        <p class="schedule-title" style="align-items:center; margin:auto">
             <label>datas e horários disponíveis para a próxima semana</label>
-            <div class="row" style="align-items:center">
+            <div class="row" style="align-items:center; margin:auto; margin-top:40px; margin-left:40px">
                 <div class="col-md-2" style="width:210px">
-                    <div class="card card-content" style="width:210px; height:200px">
+                    <div class="card card-content" style="width:210px; height:400px">
                         @Html.DisplayFor(model => model.Day) de abril
                         <p>
-                            <button type="button" class="schedule-btn">
-                                @Html.DisplayFor(model => model.Slot)
-                            </button>
+                            @if (Model.Slot != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
+                                    <input type="radio" name="slot" value="@Model.Day, @Model.Slot" id="slot" />
+                                    <label for="slot">@Html.DisplayFor(model => model.Slot1) </label>
+                                </div>
+                            }
+
+                            @if (Model.Slot1 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px; margin-top:-20px">
+                                    <input type="radio" name="slot" value="@Model.Day, @Model.Slot1" id="slot1" />
+                                    <label for="slot1">@Html.DisplayFor(model => model.Slot1) </label>
+                                </div>
+                            }
+                            
                         </p>
                     </div>
                 </div>
                 <div class="col-md-2" style="width:210px">
-                    <div class="card card-content" style="width:210px; height:200px">
+                    <div class="card card-content" style="width:210px; height:400px; margin-bottom:20px">
                         @Html.DisplayFor(model => model.Day1) de abril
                         <p>
-                            <button type="button" class="schedule-btn">
-                                @Html.DisplayFor(model => model.Slot1)
-                            </button>
+                            @if (Model.Slot2 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
+                                    <input type="radio" name="slot" value="@Model.Day1, @Model.Slot2" id="slot2" />
+                                    <label for="slot2">@Html.DisplayFor(model => model.Slot2) </label>
+                                </div>
+                            }
+
+                            @if (Model.Slot3 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px; margin-top:-20px">
+                                    <input type="radio" name="slot" value="@Model.Day1, @Model.Slot3" id="slot3" />
+                                    <label for="slot3">@Html.DisplayFor(model => model.Slot3) </label>
+                                </div>
+                            }
+                          
                         </p>
                     </div>
 
                 </div>
                 <div class="col-md-2" style="width:210px">
-                    <div class="card card-content" style="width:210px; height:200px">
+                    <div class="card card-content" style="width:210px; height:400px" ; margin-bottom:20px">
                         @Html.DisplayFor(model => model.Day2) de abril
                         <p>
-                            <button type="button" class="schedule-btn">
-                                @Html.DisplayFor(model => model.Slot2)
-                            </button>
+                            @if (Model.Slot4 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
+                                    <input type="radio" name="slot" value="@Model.Day2, @Model.Slot4" id="slot4" />
+                                    <label for="slot4">@Html.DisplayFor(model => model.Slot4) </label>
+                                </div>
+                            }
+
+                            @if (Model.Slot5 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px; margin-top:-20px">
+                                    <input type="radio" name="slot" value="@Model.Day2, @Model.Slot3" id="slot5" />
+                                    <label for="slot5">@Html.DisplayFor(model => model.Slot5) </label>
+                                </div>
+                            }
                         </p>
                     </div>
 
                 </div>
                 <div class="col-md-2" style="width:210px">
-                    <div class="card card-content" style="width:210px; height:200px">
+                    <div class="card card-content" style="width:210px; height:400px" ; margin-bottom:20px">
                         @Html.DisplayFor(model => model.Day3) de abril
                         <p>
-                            <button type="button" class="schedule-btn">
-                                @Html.DisplayFor(model => model.Slot3)
-                            </button>
+                            @if (Model.Slot6 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
+                                    <input type="radio" name="slot" value="@Model.Day3, @Model.Slot6" id="slot6" />
+                                    <label for="slot6">@Html.DisplayFor(model => model.Slot6) </label>
+                                </div>
+                            }
+
+                            @if (Model.Slot7 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px; margin-top:-20px">
+                                    <input type="radio" name="slot" value="@Model.Day3, @Model.Slot7" id="slot7" />
+                                    <label for="slot7">@Html.DisplayFor(model => model.Slot7) </label>
+                                </div>
+                            }
                         </p>
                     </div>
 
                 </div>
                 <div class="col-md-2" style="width:210px">
-                    <div class="card card-content" style="width:210px; height:200px">
+                    <div class="card card-content" style="width:210px; height:400px" ; margin-bottom:20px">
                         @Html.DisplayFor(model => model.Day4) de abril
                         <p>
-                            <button type="button" class="schedule-btn">
-                                @Html.DisplayFor(model => model.Slot4)
-                            </button>
+                            @if (Model.Slot8 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
+                                    <input type="radio" name="slot" value="@Model.Day4, @Model.Slot8" id="slot8" />
+                                    <label for="slot8">@Html.DisplayFor(model => model.Slot8) </label>
+                                </div>
+                            }
+
+                            @if (Model.Slot9 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px; margin-top:-20px">
+                                    <input type="radio" name="slot" value="@Model.Day4, @Model.Slot9" id="slot9" />
+                                    <label for="slot9">@Html.DisplayFor(model => model.Slot9) </label>
+                                </div>
+                            }
                         </p>
                     </div>
 
                 </div>
                 <div class="col-md-2" style="width:210px">
-                    <div class="card card-content" style="width:210px; height:200px">
+                    <div class="card card-content" style="width:210px; height:400px" ; margin-bottom:20px">
                         @Html.DisplayFor(model => model.Day5) de abril
                         <p>
-                            <button type="button" class="schedule-btn">
-                                @Html.DisplayFor(model => model.Slot5)
-                            </button>
+                            @if (Model.Slot10 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
+                                    <input type="radio" name="slot" value="@Model.Day5, @Model.Slot10" id="slot10" />
+                                    <label for="slot10">@Html.DisplayFor(model => model.Slot10) </label>
+                                </div>
+                            }
+
+                            @if (Model.Slot11 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px; margin-top:-20px">
+                                    <input type="radio" name="slot" value="@Model.Day5, @Model.Slot11" id="slot11" />
+                                    <label for="slot11">@Html.DisplayFor(model => model.Slot11) </label>
+                                </div>
+                            }
                         </p>
                     </div>
 
                 </div>
                 <div class="col-md-2" style="width:210px">
-                    <div class="card card-content" style="width:210px; height:200px">
+                    <div class="card card-content" style="width:210px; height:400px" ; margin-bottom:20px">
                         @Html.DisplayFor(model => model.Day6) de abril
                         <p>
-                            <button type="button" class="schedule-btn">
-                                @Html.DisplayFor(model => model.Slot6)
-                            </button>
+                            @if (Model.Slot12 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
+                                    <input type="radio" name="slot" value="@Model.Day6, @Model.Slot12" id="slot12" />
+                                    <label for="slot12">@Html.DisplayFor(model => model.Slot12) </label>
+                                </div>
+                            }
+
+                            @if (Model.Slot13 != null)
+                            {
+                                <div type="button" class="btn btn-default schedule-btn" style="font-size:18px; margin-top:-20px">
+                                    <input type="radio" name="slot" value="@Model.Day6, @Model.Slot13" id="slot13" />
+                                    <label for="slot13">@Html.DisplayFor(model => model.Slot13) </label>
+                                </div>
+                            }
                         </p>
                     </div>
                 </div>
             </div>
         </p>
 
-        <button class="schedule-btn" style="text-align:center; margin:auto">
-            <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id">agendar</a>
-        </button>
+        <div class="schedule" style="text-align:center; margin:auto; font-size:26px">
+            <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id" class="btn schedule-btn">agendar</a>
+        </div>
+
+
     </form>
 </div>

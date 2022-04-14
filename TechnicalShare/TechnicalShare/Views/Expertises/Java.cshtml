@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@@using TechnicalShare.Models
+@model IEnumerable<Mentor>
+
+@if (Model != null)
+{
+    <h3 class="mentors-sub">Nossos mentores em Java</h3>
+    <div class="cards-background">
+        <div class="cards-container">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <a asp-controller="Mentors" asp-action="Profile" asp-route-id="@item.Id" role="button">
+                        <img src="~/images/foto.png" width="308" height="326" />
+                        <div class="card-content">
+                            <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
+                            <p>mentorias em @Html.DisplayFor(modelItem => item.Expertise.Name)</p>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+else
+{
+    <div class="home-grid02" style="margin-top: 40px">
+        <h2>que pena! ainda não temos mentores nessa área</h2>
+    </div>
 }

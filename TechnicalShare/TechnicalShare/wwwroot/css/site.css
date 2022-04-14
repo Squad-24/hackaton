@@ -3,6 +3,8 @@
 body {
     background: #070707;
     max-width: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .header {
@@ -104,6 +106,7 @@ body {
 
 footer {
     border-top: 3px solid #FE4400;
+    margin-top: 30px;
     line-height: 60px;
     color: #FFFFFF;
 }
@@ -506,8 +509,10 @@ footer {
     text-align: center;
     margin-left: 50px;
     align-content: center;
+    font-size: 28px;
 }
 
 .schedule-btn input {
     margin-top: 8px;
 }
+
