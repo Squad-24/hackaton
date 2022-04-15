@@ -98,7 +98,7 @@ namespace TechnicalShare.Controllers
                 ModelState.AddModelError("", "login inválido");
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home");    //View(login); 
         }
 
 
