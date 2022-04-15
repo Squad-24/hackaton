@@ -51,12 +51,14 @@
 
     <partial name="_CookieConsentPartial" />
 
-
-    <div>
-        @RenderBody()
-        <footer>
-            <p>&copy; 2022 - TechnicalShare</p>
-        </footer>
+<div class="footer">
+        <main role="main" class="pb-3">
+            @RenderBody()
+            <div class="main">
+            </div>
+            <div class="chats_wrapper">
+            </div>
+        </main>
     </div>
 
     <environment include="Development">
