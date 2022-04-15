@@ -4,61 +4,70 @@
     ViewData["Title"] = "Cadastrar-se";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Cadastro de novo mentor</h1>
-</div>
 
-<form class="register-form" asp-controller="Mentors" asp-action="Register" method="post">
+<form class="login-form" asp-controller="Mentors" asp-action="Register" method="post">
+    <div class="login-card" style="width:900px; height:850px; transform:translate(40%, 0%)">
+        <div class="login-card-content" style="width:500px; height:800px; transform:translate(40%, 5%)">
+            <div class="text-center">
+                <h1 class="display-4" style="font-size:30px">Cadastro de novo mentor</h1>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label style="margin-top:60px">Nome</label>
+                    <input type="text" asp-for="Mentor.Name" class="form-control" placholder="Digite seu nome" />
+                    <span asp-validation-for="Mentor.Name" class="text-danger"></span>
+                </div>
 
-    <div>
-        <div class="form-group">
-            <label>Nome</label>
-            <input type="text" asp-for="Mentor.Name" class="form-control" placholder="Digite seu nome" />
-            <span asp-validation-for="Mentor.Name" class="text-danger"></span>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="text" asp-for="Mentor.Email" class="form-control" placholder="Digite seu e-mail" />
+                    <span asp-validation-for="Mentor.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" asp-for="Mentor.Password" class="form-control" placholder="Digite sua senha" />
+                    <span asp-validation-for="Mentor.Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Cargo atual</label>
+                    <input type="text" asp-for="Mentor.Position" class="form-control" placholder="Digite seu cargo atual" />
+                    <span asp-validation-for="Mentor.Position" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Nível de experiência</label>
+                    <select asp-for="Mentor.Level" class="form-control">
+                        <option value="@Level.junior">Junior</option>
+                        <option value="@Level.pleno">Pleno</option>
+                        <option value="@Level.senior">Senior</option>
+                        <option value="@Level.master">Master</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Principal área de especialidade para mentoria</label>
+                    <select asp-for="Mentor.ExpertiseId" asp-items="@(new SelectList(Model.Expertises, "Id", "Name"))" class="form-control"></select>
+                </div>
+
+                <div class="form-group">
+                    <label>Conte um pouco sobre você</label>
+                    <input type="text" asp-for="Mentor.Description" class="form-control" placholder="Escreva um pouco sobre você" />
+                    <span asp-validation-for="Mentor.Description" class="text-danger"></span>
+                </div>
+            </div>
+
+            <input type="submit" value="login" asp-controller="Mentors" asp-action="Login" style="transform:translate(0%,-40%); padding-bottom:20px; color:white" />
+
+
         </div>
 
-        <div class="form-group">
-            <label>E-mail</label>
-            <input type="text" asp-for="Mentor.Email" class="form-control" placholder="Digite seu e-mail" />
-            <span asp-validation-for="Mentor.Email" class="text-danger"></span>
-        </div>
 
-        <div class="form-group">
-            <label>Senha</label>
-            <input type="password" asp-for="Mentor.Password" class="form-control" placholder="Digite sua senha" />
-            <span asp-validation-for="Mentor.Password" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label>Cargo atual</label>
-            <input type="text" asp-for="Mentor.Position" class="form-control" placholder="Digite seu cargo atual" />
-            <span asp-validation-for="Mentor.Position" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label>Conte um pouco sobre você</label>
-            <input type="text" asp-for="Mentor.Description" class="form-control" placholder="Escreva um pouco sobre você"/>
-            <span asp-validation-for="Mentor.Description" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label>Nível de experiência</label>
-            <select asp-for="Mentor.Level" class="form-control">
-                <option value="@Level.junior">Junior</option>
-                <option value="@Level.pleno">Pleno</option>
-                <option value="@Level.senior">Senior</option>
-                <option value="@Level.master">Master</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Principal área de especialidade para mentoria</label>
-            <select asp-for="Mentor.ExpertiseId" asp-items="@(new SelectList(Model.Expertises, "Id", "Name"))" class="form-control"></select>
-        </div>
 
     </div>
 
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    
 </form>
 
 @section Scripts {
