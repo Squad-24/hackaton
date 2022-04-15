@@ -35,7 +35,7 @@
                             @if (Model.Slot != null)
                             {
                                 <div type="button" class="btn btn-default schedule-btn" style="font-size:18px">
-                                    <input type="radio" name="slot" value="@Model.Day, @Model.Slot" id="slot" />
+                                    <input type="radio" name="slot" value="@Model.Day, @Model.Slot" id="slot" required/>
                                     <label for="slot">@Html.DisplayFor(model => model.Slot) </label>
                                 </div>
                             }
@@ -193,9 +193,11 @@
         </p>
 
         <div class="schedule" style="text-align:center; margin: auto; font-size: 26px; font-family: 'Open Sans'">
-            <a asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id" class="btn btn-default schedule-btn-input">agendar</a>
+            <input class="schedule-btn-input btn btn-default" type="submit" value="agendar"  asp-controller="Mentors" asp-action="Agendar" asp-route-id="@Model.Id" 
+                   onclick="return confirm('Você tem certeza de que quer fazer este agendamento?')"></>
         </div>
 
 
     </form>
 </div>
+
