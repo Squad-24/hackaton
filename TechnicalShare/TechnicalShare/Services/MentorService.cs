@@ -54,7 +54,7 @@ namespace TechnicalShare.Services
             _context.AddRange(day, slot);
             _context.SaveChanges();
         }
-
+               
      
     }
 }

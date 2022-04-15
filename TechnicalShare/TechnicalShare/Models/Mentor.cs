@@ -8,22 +8,31 @@ namespace TechnicalShare.Models
     public class Mentor : IMentor
     {
         public int Id { get; set; }
+
         [Required(ErrorMessage = "*")]
         public string Name { get; set; }
+
         [Required(ErrorMessage = "*")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
         [Required(ErrorMessage = "*")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+
         [Required(ErrorMessage = "*")]
         public string Position { get; set; }
+
         [Required(ErrorMessage = "*")]
         [StringLength(220, ErrorMessage = "máximo de 220 caracteres")]
         public string Description { get; set; }
                 
         [Required(ErrorMessage = "*")]
         public Level Level { get; set; }
+
         [Required(ErrorMessage = "*")]
         public Expertise Expertise { get; set; }
+
         [Required(ErrorMessage = "*")]
         public int ExpertiseId { get; set; }       
         public string ExpertiseName { get; set; }

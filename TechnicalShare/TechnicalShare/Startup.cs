@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,7 @@ namespace TechnicalShare
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddRouting(options => options.LowercaseUrls = true);
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<TechnicalShareContext>();
 
             services.AddDbContext<TechnicalShareContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("TechnicalShareContext"), builder =>
@@ -65,6 +67,7 @@ namespace TechnicalShare
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {                

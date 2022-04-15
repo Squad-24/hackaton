@@ -1,0 +1,25 @@
+﻿@using TechnicalShare.Models
+@model TechnicalShare.Models.Mentor
+@{
+    ViewData["Title"] = "login";
+}
+
+
+<form class="login-form" asp-controller="Mentors" asp-action="Login" method="get">
+    <div class="login-card" width="600" height="500">
+        <div class="login-card-content">
+            <label>Seu e-mail</label>
+            <input type="text" asp-for="@Model.Email" class="form-control" placholder="Digite seu e-mail" style="margin-top:10px"/>
+            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            <div></div>
+            <label style="margin-top:50px">Sua senha</label>
+            <input type="password" asp-for="@Model.Password" class="form-control" placholder="Digite seu e-mail" style="margin-top:10px"/>
+            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            <input type="submit" value="login" asp-controller="Mentors" asp-action="Login" style="transform:translate(-10%,-80%)"/>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

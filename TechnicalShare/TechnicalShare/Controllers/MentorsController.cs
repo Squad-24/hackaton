@@ -70,6 +70,18 @@ namespace TechnicalShare.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
+        public IActionResult Login(Mentor mentor)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(string email, string password)
+        {
+            return View();
+        }
+
 
         public IActionResult Agendar(int id)
         {
