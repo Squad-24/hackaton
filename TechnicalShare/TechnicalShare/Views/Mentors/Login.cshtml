@@ -1,11 +1,11 @@
 ﻿@using TechnicalShare.Models
-@model TechnicalShare.Models.Mentor
+@model TechnicalShare.Models.ViewModels.LoginViewModel
 @{
     ViewData["Title"] = "login";
 }
 
 
-<form class="login-form" asp-controller="Mentors" asp-action="Login" method="get">
+<form class="login-form" asp-controller="Mentors" asp-action="Login" method="post">
     <div class="login-card" width="600" height="500">
         <div class="login-card-content">
             <label>Seu e-mail</label>

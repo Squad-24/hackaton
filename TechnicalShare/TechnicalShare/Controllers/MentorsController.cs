@@ -10,15 +10,17 @@ using TechnicalShare.Models.ViewModels;
 
 namespace TechnicalShare.Controllers
 {
-    public class MentorsController : Controller        
+    public class MentorsController : Controller
     {
         private readonly MentorService _mentorService;
         private readonly ExpertiseService _expertiseService;
+        private readonly TechnicalShareContext _context;
 
-        public MentorsController(MentorService mentorService, ExpertiseService expertiseService)
+        public MentorsController(MentorService mentorService, ExpertiseService expertiseService, TechnicalShareContext context)
         {
             _mentorService = mentorService;
             _expertiseService = expertiseService;
+            _context = context;
         }
         public IActionResult Index()
         {
@@ -26,7 +28,7 @@ namespace TechnicalShare.Controllers
             return View(list);
         }
 
-        
+
         public IActionResult Frontend()
         {
             var list = _mentorService.FilterById(1);
@@ -70,16 +72,33 @@ namespace TechnicalShare.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public IActionResult Login(Mentor mentor)
+
+        public IActionResult Login(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string password)
+        public IActionResult Login(LoginViewModel login, string returnUrl)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(login);
+            }
+
+            var find = _mentorService.Validate(login.Email, login.Password);
+
+            if (find is true)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError("", "login inválido");
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
 
@@ -95,7 +114,7 @@ namespace TechnicalShare.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-       public IActionResult Profile(DateTime schedule)
+        public IActionResult Profile(DateTime schedule)
         {
             _mentorService.Schedule(schedule);
             return RedirectToAction(nameof(Agendar));

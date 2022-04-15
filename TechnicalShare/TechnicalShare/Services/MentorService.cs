@@ -54,7 +54,19 @@ namespace TechnicalShare.Services
             _context.AddRange(day, slot);
             _context.SaveChanges();
         }
-               
+        
+        public bool Validate(string email, string password)
+        {
+            var validate = _context.Mentor.Where(obj => obj.Email.Equals(email) && obj.Password.Equals(password)).FirstOrDefault();
+
+            if(validate != null)
+            {
+                return true;
+            }
+
+            return false;
+            
+        }
      
     }
 }
