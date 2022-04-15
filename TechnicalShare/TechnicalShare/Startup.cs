@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -34,6 +35,8 @@ namespace TechnicalShare
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<TechnicalShareContext>();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options => options.LoginPath = "/mentors/register");
 
             services.AddDbContext<TechnicalShareContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("TechnicalShareContext"), builder =>
@@ -70,7 +73,7 @@ namespace TechnicalShare
             app.UseAuthentication();
 
             app.UseMvc(routes =>
-            {                
+            {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

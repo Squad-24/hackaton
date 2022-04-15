@@ -8,6 +8,7 @@
 <form class="login-form" asp-controller="Mentors" asp-action="Login" method="post">
     <div class="login-card" width="600" height="500">
         <div class="login-card-content">
+            @Html.ValidationSummary(true);
             <label>Seu e-mail</label>
             <input type="text" asp-for="@Model.Email" class="form-control" placholder="Digite seu e-mail" style="margin-top:10px"/>
             <span asp-validation-for="@Model.Email" class="text-danger"></span>

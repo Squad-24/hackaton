@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TechnicalShare.Data;
 using TechnicalShare.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace TechnicalShare.Services
 {

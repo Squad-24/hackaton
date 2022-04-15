@@ -7,6 +7,10 @@ using TechnicalShare.Data;
 using TechnicalShare.Services;
 using TechnicalShare.Models;
 using TechnicalShare.Models.ViewModels;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace TechnicalShare.Controllers
 {
@@ -73,33 +77,66 @@ namespace TechnicalShare.Controllers
         }
 
 
-        public IActionResult Login(string returnUrl)
+        public IActionResult Login()
         {
-            ViewBag.ReturnUrl = returnUrl;
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel login, string returnUrl)
+        public IActionResult Login(LoginViewModel login)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(login);
-            }
+                var find = _mentorService.Validate(login.Email, login.Password);
 
-            var find = _mentorService.Validate(login.Email, login.Password);
+                if (find is true)
+                {
+                    LoginMentor(login);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ViewBag.Error = "usuário e/ou senha incorretos";
+                }
 
-            if (find is true)
-            {
-                return RedirectToAction("Index", "Home");
             }
+                        
             else
             {
-                ModelState.AddModelError("", "login inválido");
+                ViewBag.Error = "login inválido";
             }
 
-            return View(login); //RedirectToAction("Index", "Home");
+            return View(); //RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        private async void LoginMentor(LoginViewModel login)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, login.Email),
+                new Claim(ClaimTypes.Role, "mentor")
+            };
+
+            var identification = new ClaimsIdentity(claims, "LoginMentor");
+            ClaimsPrincipal claimPrincipal = new ClaimsPrincipal(identification);
+
+            var authenticationProperties = new AuthenticationProperties
+            {
+                AllowRefresh = true,
+                ExpiresUtc = DateTime.Now.ToLocalTime().AddHours(2),
+                IsPersistent = true
+            };
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimPrincipal, authenticationProperties);
+        }
+
+
 
 
         public IActionResult Agendar(int id)
