@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TechnicalShare.Data;
+using TechnicalShare.Hubs;
 using TechnicalShare.Services;
 
 namespace TechnicalShare
@@ -41,7 +42,7 @@ namespace TechnicalShare
             services.AddDbContext<TechnicalShareContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("TechnicalShareContext"), builder =>
             builder.MigrationsAssembly("TechnicalShare")));
-
+            services.AddSignalR();
             services.AddScoped<ISeedingService, SeedingService>();
             services.AddScoped<IMentorService, MentorService>();
             services.AddScoped<IExpertiseService, ExpertiseService>();
@@ -77,6 +78,10 @@ namespace TechnicalShare
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+            
+            app.UseSignalR(routes => {
+                routes.MapHub<ChatHub>("/chat");
             });
         }
     }
